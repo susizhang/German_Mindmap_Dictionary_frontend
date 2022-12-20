@@ -1,9 +1,11 @@
 import Nav from "./Nav";
+import SearchResult from "./SearchResult";
 
 const Home = () => {
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
+      <SearchResult />
     </div>
   );
 };
