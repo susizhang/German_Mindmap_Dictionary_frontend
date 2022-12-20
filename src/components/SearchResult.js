@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { baseUrl } from "../config";
 
 const SearchResult = () => {
@@ -11,7 +11,7 @@ const SearchResult = () => {
     axios.get(`${baseUrl}/:${input}`).then(({ data }) => {
       // console.log(" ", data);
       setSearchedWord(data);
-      // console.log(searchedWord);
+      console.log(searchedWord);
     });
   };
 
