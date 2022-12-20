@@ -1,6 +1,6 @@
 const Nav = () => {
   return (
-    <div>
+    <div className="bg-slate-200">
       <div>
         <img src="" alt="" />
       </div>

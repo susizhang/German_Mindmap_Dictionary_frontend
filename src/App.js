@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import FirstPage from "./components/FirstPage";
 import Home from "./components/Home";
+import MarkmapHooks from "./components/MarkmapHooks";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/login" />
         <Route path="/signup" />
+        <Route path="/markmap" element={<MarkmapHooks />} />
       </Routes>
     </div>
   );
