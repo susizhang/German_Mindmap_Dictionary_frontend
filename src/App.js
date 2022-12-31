@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import FirstPage from "./components/FirstPage";
+// import FirstPage from "./components/FirstPage";
 import Home from "./components/Home";
 import MarkmapHooks from "./components/MarkmapHooks";
 
