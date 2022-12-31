@@ -8,11 +8,12 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route index element={<FirstPage />} />
+        {/* <Route index element={<FirstPage />} /> */}
         <Route path="/home" element={<Home />} />
         <Route path="/login" />
         <Route path="/signup" />
-        <Route path="/markmap" element={<MarkmapHooks />} />
+        {/* <Route path="/markmap" element={<MarkmapHooks />} /> */}
+        <Route path="/" element={<MarkmapHooks />} />
       </Routes>
     </div>
   );

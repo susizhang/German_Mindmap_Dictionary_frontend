@@ -1,7 +1,7 @@
 const FirstPage = () => {
   return (
     <div>
-      <div>
+      <nav>
         {/* <h3>Grafisches Deutsch-Wörterbuch</h3> */}
         <h3>Graphical German Dictionary</h3>
         <div>
@@ -22,7 +22,7 @@ const FirstPage = () => {
             <button>Try it now</button>
           </form>
         </div>
-      </div>
+      </nav>
       <div>
         <div>
           <h2>Related words</h2>
