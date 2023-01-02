@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Transformer } from "markmap-lib";
 import { Markmap } from "markmap-view/dist/index.esm";
-import Nav from "./Nav";
+// import Nav from "./Nav";
 
 // import "./markmap.css";
 
@@ -64,7 +64,6 @@ export default function MarkmapHooks() {
 
   return (
     <>
-      <Nav />
       <div className="flex flex-col h-screen p-2">
         {/* <div className="flex-1">
         <textarea

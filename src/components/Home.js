@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-import SearchResult from "./SearchResult";
+// import SearchResult from "./SearchResult";
 
 const Home = () => {
   return (
@@ -7,7 +7,6 @@ const Home = () => {
       <Nav />
       <main>
         <h1>Wörter für heute</h1>
-        <img src="" alt="" />
       </main>
     </>
   );

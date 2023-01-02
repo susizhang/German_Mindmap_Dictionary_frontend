@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import firstPageImg from "../assets/firstpage-example.png";
 
 const FirstPage = () => {
@@ -9,7 +10,9 @@ const FirstPage = () => {
       <div className="border-2 border-gray-200">
         <form action="">
           <input type="search" placeholder="Unbefristet" />
-          <button>Jetzt probieren</button>
+          <button>
+            <Link to="/searchResult">Jetzt probieren</Link>
+          </button>
         </form>
       </div>
       <div className="box-border h-full w-full flex flex-col  items-center mt-16">

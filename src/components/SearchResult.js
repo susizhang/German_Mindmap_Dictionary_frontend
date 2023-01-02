@@ -1,38 +1,68 @@
-import axios from "axios";
-import { useState } from "react";
-import { baseUrl } from "../config";
+// import MarkmapHooks from "./MarkmapHooks";
+import Nav from "./Nav";
+import React, { useState, useRef, useEffect } from "react";
+import { Transformer } from "markmap-lib";
+import { Markmap } from "markmap-view/dist/index.esm";
 
-const SearchResult = () => {
-  const [searchedWord, setSearchedWord] = useState({});
-  const [input, setInput] = useState("");
+const SearchResult = ({ input, searchedWord }) => {
+  const transformer = new Transformer();
+  const initValue = `
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.get(`${baseUrl}/:${input}`).then(({ data }) => {
-      // console.log(" ", data);
-      setSearchedWord(data);
-      console.log(searchedWord);
-    });
-  };
+    # Zeit
 
-  if (!searchedWord) return "Loading";
+    ## bedeutungen
+    -  die vom Arbeitgeber dem abhängig Beschäftigten 
+    oder Dienstherrn dem Unterstellten gewährte Freizeit 
+    in Höhe von einem oder meist mehreren Werktagen
+    - useful
+    ## beispiele 
+    - Für den Umzug nehme ich mir Urlaub.
+    - interactive
+
+    ## gegenwörter
+
+    - Arbeit 
+    - Dienst
+
+    - <https://markmap.js.org/>
+    - [GitHub](https://github.com/markmap/markmap)
+
+    ## unterbegriffe
+
+    - **inline** ~~text~~ *styles*
+    - $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+
+    - This is a very very very very very 
+    very very very very very very very very very very long line.
+    `;
+
+  const [value, setValue] = useState(initValue);
+  // Ref for SVG element
+  const refSvg = useRef();
+  // Ref for markmap object
+  const refMm = useRef();
+
+  useEffect(() => {
+    // Create markmap and save to refMm
+    if (refMm.current) return;
+    refMm.current = Markmap.create(refSvg.current);
+  }, [refSvg.current]);
+
+  useEffect(() => {
+    // Update data for markmap once value is changed
+    const mm = refMm.current;
+    if (!mm) return;
+    const { root } = transformer.transform(value);
+    mm.setData(root);
+    mm.fit();
+  }, [refMm.current, value]);
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={input}
-            onChange={(x) => setInput(x.target.value)}
-          />
-          <button type="submit" onClick={handleSubmit}>
-            search
-          </button>
-        </form>
+    <>
+      <div className="flex flex-col h-screen p-2">
+        <svg className="flex-1" ref={refSvg} />
       </div>
-      {/* <pre>{searchedWord}</pre> */}
-    </div>
+    </>
   );
 };
 
