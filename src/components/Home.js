@@ -1,12 +1,15 @@
-// import Nav from "./Nav";
+import Nav from "./Nav";
 import SearchResult from "./SearchResult";
 
 const Home = () => {
   return (
-    <div>
-      {/* <Nav /> */}
-      <SearchResult />
-    </div>
+    <>
+      <Nav />
+      <main>
+        <h1>Wörter für heute</h1>
+        <img src="" alt="" />
+      </main>
+    </>
   );
 };
 
