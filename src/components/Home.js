@@ -1,10 +1,10 @@
-import Nav from "./Nav";
+// import Nav from "./Nav";
 // import SearchResult from "./SearchResult";
 
 const Home = () => {
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <main>
         <h1>Wörter für heute</h1>
       </main>
