@@ -2,8 +2,10 @@ import { useState, useRef, useEffect } from "react";
 import { Transformer } from "markmap-lib";
 import { Markmap } from "markmap-view/dist/index.esm";
 import { useOutletContext, useParams } from "react-router-dom";
+import axios from "axios";
+import { baseUrl } from "../config";
 
-const getMarkdown = (input, context) => {
+const getMarkdown = (input, data) => {
   //   constructing  data
   const {
     Bedeutungen,
@@ -13,7 +15,7 @@ const getMarkdown = (input, context) => {
     Synonyme,
     Unterbegriffe,
     Wortbildungen,
-  } = context;
+  } = data;
 
   //   markmap
   return `# ${input}
@@ -68,12 +70,30 @@ const getMarkdown = (input, context) => {
 };
 
 const SearchResult = () => {
+  const [resultPageData, setResultPageData] = useState("");
   const { input } = useParams();
-  const context = useOutletContext();
+  //   const context = useOutletContext();
   console.log("Input ", input);
-  console.log(" ", context);
+  console.log(" ", resultPageData);
 
-  const value = getMarkdown(input, context);
+  useEffect(() => {
+    axios.get(`${baseUrl}/:${input}`).then(({ data }) => {
+      setResultPageData(data);
+    });
+  }, [input]);
+
+  if (!resultPageData) return "Loading";
+
+  return (
+    <SearchResultMarkdownMap
+      wordToSearch={input}
+      resultPageData={resultPageData}
+    />
+  );
+};
+
+const SearchResultMarkdownMap = ({ wordToSearch, resultPageData }) => {
+  const value = getMarkdown(wordToSearch, resultPageData);
 
   const transformer = new Transformer();
 

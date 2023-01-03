@@ -4,21 +4,15 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { baseUrl } from "../config";
 
 function Nav() {
-  const [searchedWord, setSearchedWord] = useState({});
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.get(`${baseUrl}/:${input}`).then(({ data }) => {
-      setSearchedWord(data);
-      //   console.log(searchedWord);
-      navigate(`/searchResult/${input}`);
-      setInput("");
-    });
+    navigate(`/searchResult/${input}`);
+    setInput("");
   };
 
-  if (!searchedWord) return "Loading";
   return (
     <>
       <nav className="bg-slate-200 flex  px-8 gap-8 justify-between grid grid-cols-8">
@@ -47,7 +41,7 @@ function Nav() {
         </div>
       </nav>
 
-      <Outlet context={searchedWord} />
+      <Outlet />
     </>
   );
 }
