@@ -14,11 +14,7 @@ function App() {
 
         <Route path="/" element={<Nav />}>
           <Route index element={<Home />} />
-          <Route
-            path="/searchResult/:input"
-            //   element={<SearchResult searchedWord={searchedWord} />}
-            element={<SearchResult />}
-          />
+          <Route path="/searchResult/:input" element={<SearchResult />} />
         </Route>
 
         <Route path="/wordbook" element={<Home />} />
