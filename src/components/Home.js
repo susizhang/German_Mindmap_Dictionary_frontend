@@ -32,7 +32,7 @@ const Home = () => {
       </Link>
       <main>
         <h1 className="text-6xl font-bold text-center tracking-tight">
-          Wörter für heute
+          Wort für heute
         </h1>
       </main>
       <SearchResultMarkdownMap
