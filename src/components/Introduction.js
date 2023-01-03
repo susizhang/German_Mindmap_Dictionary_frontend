@@ -15,7 +15,7 @@ const Introduction = () => {
       </p>
 
       <div className=" border-2 border-gray-200  h-12 mt-6 rounded-full w-5/12 flex font-normal  ">
-        <form className="flex flex-row ml-6 w-full items-center " action="">
+        <form className="flex ml-6 w-full items-center " action="">
           <BiSearch />
           <input
             className="w-3/4 ml-2"

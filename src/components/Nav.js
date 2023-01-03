@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { baseUrl } from "../config";
+import { BiSearch } from "react-icons/bi";
+import logo from "../assets/logo.png";
 
 function Nav() {
   const [input, setInput] = useState("");
@@ -15,14 +15,15 @@ function Nav() {
 
   return (
     <>
-      <nav className="bg-slate-200 flex  px-8 gap-8 justify-between grid grid-cols-8">
+      <nav className=" flex  px-8 gap-8 justify-between grid grid-cols-8 items-center mt-6">
         <div className="col-span-1">
           <Link to="/">
-            <img src="" alt="logo" />
+            <img className="w-16" src={logo} alt="logo" />
           </Link>
         </div>
-        <div className="border-b-2 col-span-5">
-          <form onSubmit={handleSubmit}>
+        <div className="border-b-2 col-span-5 ">
+          <form className="flex " onSubmit={handleSubmit}>
+            <BiSearch />
             <input
               className="w-10/12"
               type="text"

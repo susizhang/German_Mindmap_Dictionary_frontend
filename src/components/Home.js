@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { baseUrl } from "../config";
 import { RandomWordList } from "../data/RandomWordList";
 import SearchResultMarkdownMap from "./SearchResultMarkdownMap";
@@ -25,15 +26,20 @@ const Home = () => {
   if (!randomWord) return "Loading";
 
   return (
-    <>
+    <div className="flex flex-col ">
+      <Link className="m-auto mb-10" to="/introduction">
+        Introduction page
+      </Link>
       <main>
-        <h1>Wörter für heute</h1>
+        <h1 className="text-6xl font-bold text-center tracking-tight">
+          Wörter für heute
+        </h1>
       </main>
       <SearchResultMarkdownMap
         wordToSearch={randomInput}
         resultPageData={randomWord}
       />
-    </>
+    </div>
   );
 };
 
