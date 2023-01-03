@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import SearchResult from "./components/SearchResult";
 import Introduction from "./components/Introduction";
 import Nav from "./components/Nav";
+import MyWordBook from "./components/MyWordBook";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/searchResult/:input" element={<SearchResult />} />
         </Route>
 
-        <Route path="/wordbook" element={<Home />} />
+        <Route path="/wordbook" element={<MyWordBook />} />
         <Route path="/login" />
         <Route path="/signup" />
       </Routes>
