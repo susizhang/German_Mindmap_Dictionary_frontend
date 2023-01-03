@@ -1,25 +1,34 @@
 import { Link } from "react-router-dom";
 import firstPageImg from "../assets/firstpage-example.png";
 import logo from "../assets/logo.png";
+import { BiSearch } from "react-icons/bi";
+import "./introduction.css";
 
 const Introduction = () => {
   return (
     <header className=" flex flex-col  items-center mt-12	">
-      <h1 className="text-7xl font-bold text-center ">
+      <h1 className="text-7xl font-bold text-center tracking-tight ">
         10 Wörter <br /> in einer Abfrage lernen
       </h1>
-      <p className="text-sm font-light">Grafisches Deutsch-Wörterbuch</p>
+      <p className="text-3xl font-normal text-slate-500 mt-6">
+        Deutsch-Mindmap-Wörterbuch
+      </p>
 
-      <div className="border-2 border-gray-200">
-        <form action="">
-          <input type="search" placeholder="Unbefristet" />
-          <button>
+      <div className=" border-2 border-gray-200  h-12 mt-6 rounded-full w-5/12 flex font-normal  ">
+        <form className="flex flex-row ml-6 w-full items-center " action="">
+          <BiSearch />
+          <input
+            className="w-3/4 ml-2"
+            type="search"
+            placeholder="Unbefristet"
+          />
+          <button className="introduction-search-button w-1/3 h-full  rounded-full text-white">
             <Link to="/searchResult">Jetzt probieren</Link>
           </button>
         </form>
       </div>
       <div className=" grid grid-cols-8 box-border h-full w-ful  mt-16 justify-items-end">
-        <img className="w-80 col-start-2 col-span-2 " src={logo} alt="logo" />
+        <img className="w-72 col-start-2 col-span-2 " src={logo} alt="logo" />
         <img className="col-span-4" src={firstPageImg} alt="beispiel" />
       </div>
     </header>
