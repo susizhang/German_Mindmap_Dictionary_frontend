@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const MyWordBook = () => {
   return (
     <>
       <nav className="flex ">
-        <img className="w-16" src={logo} alt="logo" />
-        <button>back to HomePage</button>
+        <Link to="/">
+          <img className="w-16" src={logo} alt="logo" />
+        </Link>
+        <Link to="/">back to HomePage</Link>
       </nav>
       <ul>
         <li>
