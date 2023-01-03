@@ -4,9 +4,9 @@ import { Markmap } from "markmap-view/dist/index.esm";
 import { useParams } from "react-router-dom";
 
 const SearchResult = ({ searchedWord }) => {
-  const { id } = useParams();
-  //   console.log("input", id);
-  //   console.log("search ", searchedWord);
+  const { input } = useParams();
+
+  console.log("search ", searchedWord);
 
   //   props data
   const {
@@ -21,7 +21,7 @@ const SearchResult = ({ searchedWord }) => {
 
   //   markmap
   const transformer = new Transformer();
-  const initValue = `# ${id}
+  const initValue = `# ${input}
 
 ## Bedeutungen
 - ${Bedeutungen[0]}
@@ -51,7 +51,7 @@ const SearchResult = ({ searchedWord }) => {
 
 ## Unterbegriffe
 
-- ${Unterbegriffe[0].slice(0, 180) + "..."}
+- ${Unterbegriffe[0]?.slice(0, 180) + "..."}
 - ${Unterbegriffe[1]}
 - ${Unterbegriffe[2]}
 - ${Unterbegriffe[3]}
@@ -78,15 +78,12 @@ const SearchResult = ({ searchedWord }) => {
   const refMm = useRef();
 
   useEffect(() => {
-    // Create markmap and save to refMm
-    // console.log("1 ", refMm.current);
     if (refMm.current) return;
-    // console.log("2 ", refSvg.current);
+
     refMm.current = Markmap.create(refSvg.current);
   }, [refSvg.current]);
 
   useEffect(() => {
-    // console.log("3 ", refMm.current);
     // Update data for markmap once value is changed
     const mm = refMm.current;
     if (!mm) return;

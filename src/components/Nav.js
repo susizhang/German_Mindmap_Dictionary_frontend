@@ -1,14 +1,9 @@
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
-import "./App.css";
-
-import Home from "./components/Home";
-import SearchResult from "./components/SearchResult";
 import axios from "axios";
 import { useState } from "react";
-import { baseUrl } from "./config";
-import Introduction from "./components/Introduction";
+import { Link, useNavigate } from "react-router-dom";
+import { baseUrl } from "../config";
 
-function App() {
+function Nav() {
   const [searchedWord, setSearchedWord] = useState({});
   const [input, setInput] = useState("");
   const navigate = useNavigate();
@@ -24,9 +19,8 @@ function App() {
   };
 
   if (!searchedWord) return "Loading";
-
   return (
-    <div>
+    <>
       <nav className="bg-slate-200 flex  px-8 gap-8 justify-between grid grid-cols-8">
         <div className="col-span-1">
           <Link to="/">
@@ -52,21 +46,8 @@ function App() {
           <Link>theme</Link>
         </div>
       </nav>
-
-      <Routes>
-        <Route path="introduction" element={<Introduction />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/wordbook" element={<Home />} />
-        <Route path="/login" />
-        <Route path="/signup" />
-
-        <Route
-          path="/searchResult/:input"
-          element={<SearchResult searchedWord={searchedWord} />}
-        />
-      </Routes>
-    </div>
+    </>
   );
 }
 
-export default App;
+export default Nav;

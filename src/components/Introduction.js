@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import firstPageImg from "../assets/firstpage-example.png";
 
-const FirstPage = () => {
+const Introduction = () => {
   return (
     <header className=" flex flex-col  items-center	">
       <h1 className="text-6xl font-bold">10 Wörter in einer Abfrage lernen</h1>
@@ -22,4 +22,4 @@ const FirstPage = () => {
   );
 };
 
-export default FirstPage;
+export default Introduction;
