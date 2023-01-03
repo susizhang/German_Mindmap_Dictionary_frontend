@@ -1,14 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { Transformer } from "markmap-lib";
 import { Markmap } from "markmap-view/dist/index.esm";
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 
-const SearchResult = ({ searchedWord }) => {
-  const { input } = useParams();
-
-  console.log("search ", searchedWord);
-
-  //   props data
+const getMarkdown = (input, context) => {
+  //   constructing  data
   const {
     Bedeutungen,
     Beispiele,
@@ -17,11 +13,10 @@ const SearchResult = ({ searchedWord }) => {
     Synonyme,
     Unterbegriffe,
     Wortbildungen,
-  } = searchedWord;
+  } = context;
 
   //   markmap
-  const transformer = new Transformer();
-  const initValue = `# ${input}
+  return `# ${input}
 
 ## Bedeutungen
 - ${Bedeutungen[0]}
@@ -70,8 +65,18 @@ const SearchResult = ({ searchedWord }) => {
 
 
 `;
+};
 
-  const [value, setValue] = useState(initValue);
+const SearchResult = () => {
+  const { input } = useParams();
+  const context = useOutletContext();
+  console.log("Input ", input);
+  console.log(" ", context);
+
+  const value = getMarkdown(input, context);
+
+  const transformer = new Transformer();
+
   // Ref for SVG element
   const refSvg = useRef();
   // Ref for markmap object

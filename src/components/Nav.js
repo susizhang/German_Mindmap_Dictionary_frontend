@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { baseUrl } from "../config";
 
 function Nav() {
@@ -46,6 +46,8 @@ function Nav() {
           <Link>theme</Link>
         </div>
       </nav>
+
+      <Outlet context={searchedWord} />
     </>
   );
 }
