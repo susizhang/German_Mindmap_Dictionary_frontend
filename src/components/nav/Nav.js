@@ -3,8 +3,8 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { BiSun } from "react-icons/bi";
 import { BiMoon } from "react-icons/bi";
-import logo from "../assets/logo.png";
-import { ThemeContext } from "../context/Theme";
+import logo from "../../assets/logo.png";
+import { ThemeContext } from "../../context/Theme";
 import "./Nav.css";
 
 function Nav() {

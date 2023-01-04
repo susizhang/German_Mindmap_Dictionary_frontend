@@ -3,10 +3,10 @@ import "./App.css";
 import { useContext } from "react";
 import Home from "./components/Home";
 import SearchResult from "./components/SearchResult";
-import Introduction from "./components/Introduction";
-import Nav from "./components/Nav";
 import MyWordBook from "./components/MyWordBook";
 import { ThemeContext } from "./context/Theme";
+import Introduction from "./components/introduction/Introduction";
+import Nav from "./components/nav/Nav";
 
 function App() {
   const [{ themeName }] = useContext(ThemeContext);

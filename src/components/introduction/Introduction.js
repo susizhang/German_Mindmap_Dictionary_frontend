@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import firstPageImg from "../assets/firstpage-example.png";
-import logo from "../assets/logo.png";
+import firstPageImg from "../../assets/firstpage-example.png";
+import logo from "../../assets/logo.png";
 import { BiSearch } from "react-icons/bi";
 import "./introduction.css";
 
