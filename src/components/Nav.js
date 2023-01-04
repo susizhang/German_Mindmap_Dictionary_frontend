@@ -24,7 +24,7 @@ function Nav() {
 
   return (
     <>
-      <nav className=" flex  px-8 gap-8 justify-between grid grid-cols-8 items-center mt-6">
+      <nav className=" flex  px-8 gap-8 justify-between grid grid-cols-8 items-center pt-6">
         <div className="col-span-1">
           <Link to="/">
             <img className="w-16" src={logo} alt="logo" />

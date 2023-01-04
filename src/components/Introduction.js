@@ -6,7 +6,7 @@ import "./introduction.css";
 
 const Introduction = () => {
   return (
-    <header className=" flex flex-col  items-center mt-12	">
+    <header className=" flex flex-col  items-center pt-12	">
       <h1 className="text-7xl font-bold text-center tracking-tight ">
         10 Wörter <br /> in einer Abfrage lernen
       </h1>
@@ -22,9 +22,12 @@ const Introduction = () => {
             type="search"
             placeholder="unbefristet"
           />
-          <button className="introduction-search-button w-1/3 h-full  rounded-full text-white">
-            <Link to="/searchResult/unbefristet">Jetzt probieren</Link>
-          </button>
+          <Link
+            className="introduction-search-button w-1/3 h-full  rounded-full text-white  flex items-center justify-center  "
+            to="/searchResult/unbefristet"
+          >
+            Jetzt probieren
+          </Link>
         </form>
       </div>
       <div className=" grid grid-cols-8 box-border h-full w-ful  mt-16 justify-items-end">
