@@ -7,6 +7,7 @@ import MyWordBook from "./components/MyWordBook";
 import { ThemeContext } from "./context/Theme";
 import Introduction from "./components/introduction/Introduction";
 import Nav from "./components/nav/Nav";
+import Signup from "./components/signup/Signup";
 
 function App() {
   const [{ themeName }] = useContext(ThemeContext);
@@ -22,7 +23,7 @@ function App() {
 
         <Route path="/wordbook" element={<MyWordBook />} />
         <Route path="/login" />
-        <Route path="/signup" />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );
