@@ -20,10 +20,10 @@ const Introduction = () => {
           <input
             className="w-3/4 ml-2"
             type="search"
-            placeholder="Unbefristet"
+            placeholder="unbefristet"
           />
           <button className="introduction-search-button w-1/3 h-full  rounded-full text-white">
-            <Link to="/searchResult">Jetzt probieren</Link>
+            <Link to="/searchResult/unbefristet">Jetzt probieren</Link>
           </button>
         </form>
       </div>
