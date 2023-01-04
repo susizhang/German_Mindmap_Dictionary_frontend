@@ -9,8 +9,12 @@ function Nav() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/searchResult/${input}`);
-    setInput("");
+    if (!input) {
+      alert(" Bitte geben Sie zuerst das gesuchte Wort ein.");
+    } else {
+      navigate(`/searchResult/${input}`);
+      setInput("");
+    }
   };
 
   return (
