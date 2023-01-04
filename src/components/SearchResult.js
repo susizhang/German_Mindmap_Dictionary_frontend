@@ -7,9 +7,9 @@ import SearchResultMarkdownMap from "./SearchResultMarkdownMap";
 const SearchResult = () => {
   const [resultPageData, setResultPageData] = useState("");
   const { input } = useParams();
-  //   const context = useOutletContext();
-  console.log("Input ", input);
-  console.log(" ", resultPageData);
+
+  //   console.log("Input ", input);
+  //   console.log(" ", resultPageData);
 
   useEffect(() => {
     axios.get(`${baseUrl}/:${input}`).then(({ data }) => {

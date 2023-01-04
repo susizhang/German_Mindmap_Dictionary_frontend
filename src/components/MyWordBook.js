@@ -6,7 +6,7 @@ const MyWordBook = () => {
     <>
       <nav className="flex ">
         <Link to="/">
-          <img className="w-16" src={logo} alt="logo" />
+          <img className="w-28" src={logo} alt="logo" />
         </Link>
         <Link to="/">back to HomePage</Link>
       </nav>
