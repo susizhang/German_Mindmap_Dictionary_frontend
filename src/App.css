@@ -1,5 +1,4 @@
 .app {
-  font-family: "Poppins", sans-serif;
   line-height: 1.5;
   color: var(--clr-fg);
   background-color: var(--clr-bg);
@@ -8,7 +7,7 @@
 .light {
   --clr-bg: #fcfcfc;
   --clr-bg-alt: #fff;
-  --clr-fg: #555;
+  --clr-fg: rgb(40, 40, 47);
   --clr-fg-separate: rgba(85, 85, 85, 0.107);
   --clr-fg-alt: #444;
   --clr-fg-alt-title2: rgba(68, 68, 68, 0.75);
