@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
+import { BiSun } from "react-icons/bi";
+import { BiMoon } from "react-icons/bi";
 import logo from "../assets/logo.png";
+import { ThemeContext } from "../context/Theme";
+import "./Nav.css";
 
 function Nav() {
+  const [{ themeName, toggleTheme }] = useContext(ThemeContext);
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
@@ -42,7 +47,14 @@ function Nav() {
         </div>
         <div className="col-span-2 flex gap-8">
           <Link to="/wordbook">Mein Wörterbuch</Link>
-          <Link>theme</Link>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="btn btn--icon nav__theme"
+            aria-label="toggle theme"
+          >
+            {themeName === "dark" ? <BiSun /> : <BiMoon />}
+          </button>
         </div>
       </nav>
 

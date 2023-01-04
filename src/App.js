@@ -1,15 +1,17 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-
+import { useContext } from "react";
 import Home from "./components/Home";
 import SearchResult from "./components/SearchResult";
 import Introduction from "./components/Introduction";
 import Nav from "./components/Nav";
 import MyWordBook from "./components/MyWordBook";
+import { ThemeContext } from "./context/Theme";
 
 function App() {
+  const [{ themeName }] = useContext(ThemeContext);
   return (
-    <div>
+    <div className={`${themeName} app`}>
       <Routes>
         <Route path="introduction" element={<Introduction />} />
 
