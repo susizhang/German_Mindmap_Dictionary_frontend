@@ -30,7 +30,7 @@ function Nav() {
             <img className="w-28" src={logo} alt="logo" />
           </Link>
         </div>
-        <div className="border-b-2 col-span-5 ">
+        <div className="border-b-2 col-span-4 ">
           <form className="flex " onSubmit={handleSubmit}>
             <BiSearch />
             <input
@@ -44,6 +44,10 @@ function Nav() {
               Suchen
             </button>
           </form>
+        </div>
+        <div className="col-span-1">
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
         </div>
         <div className="col-span-2 flex gap-8">
           <Link to="/wordbook">Mein Wörterbuch</Link>
