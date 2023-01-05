@@ -7,7 +7,7 @@ import SearchResultMarkdownMap from "./SearchResultMarkdownMap";
 
 const Home = () => {
   const [randomWord, setRandomWord] = useState("");
-  const [randomIndex, setRandomIndex] = useState(0);
+  const [randomIndex, setRandomIndex] = useState(2);
 
   useEffect(() => {
     setInterval(() => {
