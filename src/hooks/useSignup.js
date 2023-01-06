@@ -12,7 +12,6 @@ export const useSignup = () => {
       setIsLoading(true);
       setError(null);
 
-      console.log("before BE request ");
       const response = await fetch("http://localhost:5100/user/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -20,7 +19,6 @@ export const useSignup = () => {
       });
 
       const json = await response.json();
-      console.log("json ", json);
 
       if (!response.ok) {
         setIsLoading(false);
@@ -29,8 +27,6 @@ export const useSignup = () => {
       if (response.ok) {
         //save the user to local storage
         localStorage.setItem("user", JSON.stringify(json));
-
-        console.log("asdf ", json);
 
         // update the auth context
         dispatch({ type: "LOGIN", payload: json });
