@@ -5,12 +5,13 @@ import { BiSun } from "react-icons/bi";
 import { BiMoon } from "react-icons/bi";
 import logo from "../../assets/logo.png";
 import { ThemeContext } from "../../context/Theme";
+import { useLogout } from "../../hooks/useLogout";
 import "./Nav.css";
-import useLogout from "../../hooks/useLogout";
+
 import { useAuthContext } from "../../hooks/userAuthContext";
 
 function Nav() {
-  const { logout } = useLogout;
+  const { logout } = useLogout();
   const [{ themeName, toggleTheme }] = useContext(ThemeContext);
   const [input, setInput] = useState("");
   const navigate = useNavigate();
