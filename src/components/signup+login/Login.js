@@ -12,9 +12,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await login(email, password);
-    console.log(" ", email, password);
+    // console.log(" ", email, password);
   };
   if (user) return <Navigate to="/" />;
+
   return (
     <form onSubmit={handleSubmit}>
       <h3>Log in</h3>
