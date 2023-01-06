@@ -68,7 +68,8 @@ function Nav() {
         )}
 
         <div className="col-span-2 flex gap-8">
-          <Link to="/wordbook">Mein Wörterbuch</Link>
+          {user && <Link to="/wordbook">Mein Wörterbuch</Link>}
+          {!user && <Link to="/login">Mein Wörterbuch</Link>}
           <button
             type="button"
             onClick={toggleTheme}
