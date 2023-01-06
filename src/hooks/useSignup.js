@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import axios from "axios";
+import { baseUrl } from "../config";
 import { useAuthContext } from "./userAuthContext";
 
 export const useSignup = () => {
@@ -12,7 +12,7 @@ export const useSignup = () => {
       setIsLoading(true);
       setError(null);
 
-      const response = await fetch("http://localhost:5100/user/signup", {
+      const response = await fetch(`${baseUrl}/user/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

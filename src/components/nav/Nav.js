@@ -6,11 +6,15 @@ import { BiMoon } from "react-icons/bi";
 import logo from "../../assets/logo.png";
 import { ThemeContext } from "../../context/Theme";
 import "./Nav.css";
+import useLogout from "../../hooks/useLogout";
+import { useAuthContext } from "../../hooks/userAuthContext";
 
 function Nav() {
+  const { logout } = useLogout;
   const [{ themeName, toggleTheme }] = useContext(ThemeContext);
   const [input, setInput] = useState("");
   const navigate = useNavigate();
+  const { user } = useAuthContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +24,10 @@ function Nav() {
       navigate(`/searchResult/${input}`);
       setInput("");
     }
+  };
+
+  const handleClick = () => {
+    logout();
   };
 
   return (
@@ -45,10 +53,19 @@ function Nav() {
             </button>
           </form>
         </div>
-        <div className="col-span-1">
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
-        </div>
+        {user && (
+          <div>
+            <span>{user.email}</span>
+            <button onClick={handleClick}>Log out</button>
+          </div>
+        )}
+        {!user && (
+          <div className="col-span-1">
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link>
+          </div>
+        )}
+
         <div className="col-span-2 flex gap-8">
           <Link to="/wordbook">Mein Wörterbuch</Link>
           <button
