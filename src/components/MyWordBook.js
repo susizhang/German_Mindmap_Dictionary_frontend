@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-
+import ScrollToTop from "react-scroll-to-top";
 const MyWordBook = () => {
   return (
     <>
@@ -14,10 +14,12 @@ const MyWordBook = () => {
         <li>
           <div>word</div>
           <div>Bedeutung</div>
+          <div>Notizen</div>
           <button>show in mindmap</button>
           <button>delete</button>
         </li>
       </ul>
+      <ScrollToTop smooth color="#6f00ff" />
     </>
   );
 };

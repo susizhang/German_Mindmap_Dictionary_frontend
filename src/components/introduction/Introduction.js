@@ -8,7 +8,8 @@ const Introduction = () => {
   return (
     <header className=" flex flex-col  items-center pt-12	">
       <h1 className="text-7xl font-bold text-center tracking-tight ">
-        10 Wörter <br /> in einer Abfrage lernen
+        10 Wörter in
+        <br /> einer Abfrage lernen
       </h1>
       <p className="text-3xl font-normal text-slate-500 mt-6">
         Deutsch-Mindmap-Wörterbuch

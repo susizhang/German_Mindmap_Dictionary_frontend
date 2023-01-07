@@ -26,14 +26,9 @@ const Signup = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmitHandler = (data) => {
-    console.log({ data });
-    reset();
-  };
 
   const signUpHandleSubmit = async (e) => {
     // e.preventDefault();
