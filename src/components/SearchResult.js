@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../config";
 import SearchResultMarkdownMap from "./SearchResultMarkdownMap";
@@ -9,7 +9,7 @@ const SearchResult = () => {
   const [resultPageData, setResultPageData] = useState("");
   const { input } = useParams();
   const { user } = useAuthContext();
-
+  const navigate = useNavigate();
   //   console.log("Input ", input);
   //   console.log(" ", resultPageData);
 
@@ -19,11 +19,24 @@ const SearchResult = () => {
     });
   }, [input]);
 
+  const saveWordHandler = () => {
+    if (user) {
+      axios.post(`${baseUrl}/word/save`, {
+        Wort: input,
+      });
+      alert("Save successfully");
+    } else {
+      navigate("/login");
+    }
+  };
+
   if (!resultPageData) return "Loading";
 
   return (
     <>
-      {user && <Link to="/wordbook">Save to my wordbook</Link>}
+      <button className="btn" onClick={saveWordHandler}>
+        Save to my wordbook
+      </button>
       <SearchResultMarkdownMap
         wordToSearch={input}
         resultPageData={resultPageData}

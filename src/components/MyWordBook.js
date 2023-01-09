@@ -1,7 +1,43 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import ScrollToTop from "react-scroll-to-top";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { baseUrl } from "../config";
 const MyWordBook = () => {
+  const [savedWords, setSavedWords] = useState();
+  useEffect(() => {
+    axios.get(`${baseUrl}/word/allWords`).then(({ data }) => {
+      console.log(data.SavedWordsList);
+      setSavedWords(data.SavedWordsList);
+    });
+  }, []);
+
+  const deleteHandler = (wordId) => {
+    try {
+      axios.delete(`${baseUrl}/word/${wordId}`).then((res) => {
+        alert(" Delete successfully");
+        // window.location.reload();
+
+        const newSavedWords = savedWords.filter((word) => {
+          return word._id !== wordId;
+        });
+        // console.log(" newSavedWords", newSavedWords);
+        setSavedWords(newSavedWords);
+      });
+    } catch (error) {
+      console.log(" delete", error.message);
+    }
+  };
+
+  const addNotesHandler = async () => {
+    await axios.post(`${baseUrl}/word/save`, {
+      Notizen: "ll",
+    });
+    alert("Save successfully");
+  };
+
+  if (!savedWords) return "Loading";
   return (
     <>
       <nav className="flex ">
@@ -10,39 +46,13 @@ const MyWordBook = () => {
         </Link>
         <Link to="/">back to HomePage</Link>
       </nav>
-      <ul>
-        <li>
-          <div>word</div>
-          <div>Bedeutung</div>
-          <div>Notizen</div>
-          <button>show in mindmap</button>
-          <button>delete</button>
-          <button>add Notizen</button>
-        </li>
-      </ul>
-      <div className="card w-1/4 bg-base-100 shadow-xl">
-        <figure>
-          <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end ">
-            <button className="btn btn-primary">Buy Now</button>
-            <button className="btn btn-primary">delete</button>
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
-      </div>
 
       <div className="overflow-x-auto">
         <table className="table w-full">
-          {/* <!-- head --> */}
           <thead>
             <tr>
               <th></th>
               <th>word</th>
-              <th>Bedeutung</th>
               <th>Notizen </th>
               <th> </th>
               <th> </th>
@@ -50,36 +60,26 @@ const MyWordBook = () => {
             </tr>
           </thead>
           <tbody>
-            {/* <!-- row 1 --> */}
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-              <td>
-                <button>show in mindmap</button>
-              </td>
-              <td>
-                <button>delete</button>
-              </td>
-              <td>
-                <button>add Notizen</button>
-              </td>
-            </tr>
-            {/* <!-- row 2 --> */}
-            <tr>
-              <th>2</th>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
-            </tr>
-            {/* <!-- row 3 --> */}
-            <tr>
-              <th>3</th>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Red</td>
-            </tr>
+            {savedWords.map((word, index) => (
+              <tr key={index}>
+                <th>{index + 1}</th>
+                <td>{word.Wort}</td>
+                <td>
+                  <button></button>
+                </td>
+                <td>
+                  <button>show in mindmap</button>
+                </td>
+                <td>
+                  <button onClick={() => deleteHandler(word._id)}>
+                    delete
+                  </button>
+                </td>
+                <td>
+                  <button>add Notizen</button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
