@@ -68,7 +68,7 @@ const MyWordBook = () => {
                   </button>
                 </td>
                 <td>
-                  <AddingNotesModal wordId={word._id} />
+                  <AddingNotesModal wordId={word._id} notes={word.Notizen} />
                 </td>
               </tr>
             ))}
