@@ -1,12 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import ScrollToTop from "react-scroll-to-top";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { baseUrl } from "../config";
 import AddingNotesModal from "./AddingNotesModal";
+// import SearchResultMarkdownMap from "./SearchResultMarkdownMap";
 const MyWordBook = () => {
   const [savedWords, setSavedWords] = useState();
+  //   const [wordBookResultDate, setWordBookResultDate] = useState();
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     axios.get(`${baseUrl}/word/allWords`).then(({ data }) => {
       console.log(data.SavedWordsList);
@@ -31,6 +36,10 @@ const MyWordBook = () => {
     }
   };
 
+  const showInMindmapHandler = (word) => {
+    navigate(`/searchResult/${word}`);
+  };
+
   if (!savedWords) return "Loading";
   return (
     <>
@@ -46,7 +55,7 @@ const MyWordBook = () => {
           <thead>
             <tr>
               <th></th>
-              <th>word</th>
+              <th>Wort</th>
               <th>Notizen </th>
               <th> </th>
               <th> </th>
@@ -60,7 +69,9 @@ const MyWordBook = () => {
                 <td>{word.Wort}</td>
                 <td>{word.Notizen}</td>
                 <td>
-                  <button>show in mindmap</button>
+                  <button onClick={() => showInMindmapHandler(word.Wort)}>
+                    show in mindmap
+                  </button>
                 </td>
                 <td>
                   <button onClick={() => deleteHandler(word._id)}>
