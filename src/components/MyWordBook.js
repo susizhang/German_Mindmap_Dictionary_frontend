@@ -4,6 +4,7 @@ import ScrollToTop from "react-scroll-to-top";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { baseUrl } from "../config";
+import AddingNotesModal from "./AddingNotesModal";
 const MyWordBook = () => {
   const [savedWords, setSavedWords] = useState();
   useEffect(() => {
@@ -28,13 +29,6 @@ const MyWordBook = () => {
     } catch (error) {
       console.log(" delete", error.message);
     }
-  };
-
-  const addNotesHandler = async () => {
-    await axios.post(`${baseUrl}/word/save`, {
-      Notizen: "ll",
-    });
-    alert("Save successfully");
   };
 
   if (!savedWords) return "Loading";
@@ -64,9 +58,7 @@ const MyWordBook = () => {
               <tr key={index}>
                 <th>{index + 1}</th>
                 <td>{word.Wort}</td>
-                <td>
-                  <button></button>
-                </td>
+                <td>{word.Notizen}</td>
                 <td>
                   <button>show in mindmap</button>
                 </td>
@@ -76,7 +68,7 @@ const MyWordBook = () => {
                   </button>
                 </td>
                 <td>
-                  <button>add Notizen</button>
+                  <AddingNotesModal wordId={word._id} />
                 </td>
               </tr>
             ))}
