@@ -1,3 +1,13 @@
 .introduction-search-button {
   background-color: #18cd82;
 }
+
+.intro-mindmap {
+  color: blueviolet;
+  margin-left: -10px;
+  padding: 20px;
+  background-image: url("../../assets/Loop.png");
+  background-position: 0 0;
+  background-size: auto 155px;
+  background-repeat: no-repeat;
+}
