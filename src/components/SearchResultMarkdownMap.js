@@ -2,6 +2,13 @@ import { Transformer } from "markmap-lib";
 import { Markmap } from "markmap-view/dist/index.esm";
 import { useEffect, useRef } from "react";
 
+// - ${Bedeutungen[0]}
+// - ${Bedeutungen[1]}
+// - ${Bedeutungen[2]}
+// - ${Bedeutungen[3]}
+// - ${Bedeutungen[4]}
+// - ${Bedeutungen[5]}
+
 const getMarkdown = (input, data) => {
   //   constructing  data
   const {
@@ -17,50 +24,34 @@ const getMarkdown = (input, data) => {
   //   markmap
   return `# ${input}
 
-## Bedeutungen
-- ${Bedeutungen[0]}
-- ${Bedeutungen[1]}
-- ${Bedeutungen[2]}
-- ${Bedeutungen[3]}
-- ${Bedeutungen[4]}
-- ${Bedeutungen[5]}
-
-## Beispiele
-
-- ${Beispiele[0]}
-- ${Beispiele[1]}
- 
-## Gegenwörter
-- ${Gegenwörter}
-
-## SinnverwandteWörter
-- ${SinnverwandteWörter}
-
-## Synonyme
-- ${Synonyme[0]}
-- ${Synonyme[1]}
-- ${Synonyme[2]}
-- ${Synonyme[3]}
-- ${Synonyme[4]}
-
-## Unterbegriffe
-
-- ${Unterbegriffe[0]?.slice(0, 180) + "..."}
-- ${Unterbegriffe[1]}
-- ${Unterbegriffe[2]}
-- ${Unterbegriffe[3]}
-- ${Unterbegriffe[4]}
-- ${Unterbegriffe[5]}
-- ${Unterbegriffe[6]}
-- ${Unterbegriffe[7]}
-- ${Unterbegriffe[8]}
+    ## Bedeutungen
+    ${Bedeutungen?.map((item) => `  \n -  ${item} `)}
 
 
-## Wortbildungen
+    ## Beispiele
+    ${Beispiele?.map((item) => `  \n -  ${item} `)}
 
-- ${Wortbildungen[0]}
-- ${Wortbildungen[1]}
-- ${Wortbildungen[2]}
+
+    
+    ## Gegenwörter
+    ${Gegenwörter?.map((item) => ` \n -  ${item} `)}
+
+
+    ## SinnverwandteWörter
+    ${SinnverwandteWörter?.map((item) => ` \n -  ${item} `)}
+
+    ## Synonyme
+    ${Synonyme?.map((item) => `\n - ${item} `)}
+
+
+    ## Unterbegriffe
+
+    ${Unterbegriffe?.map((item) => ` \n -  ${item} `.slice(0, 180) + "...")}
+
+
+    ## Wortbildungen
+
+    ${Wortbildungen?.map((item) => ` \n - ${item} `)}
 
 
 `;

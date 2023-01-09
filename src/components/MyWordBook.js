@@ -5,10 +5,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { baseUrl } from "../config";
 import AddingNotesModal from "./AddingNotesModal";
-// import SearchResultMarkdownMap from "./SearchResultMarkdownMap";
+
 const MyWordBook = () => {
   const [savedWords, setSavedWords] = useState();
-  //   const [wordBookResultDate, setWordBookResultDate] = useState();
 
   const navigate = useNavigate();
 
@@ -79,7 +78,11 @@ const MyWordBook = () => {
                   </button>
                 </td>
                 <td>
-                  <AddingNotesModal wordId={word._id} notes={word.Notizen} />
+                  <AddingNotesModal
+                    wordId={word._id}
+                    notes={word.Notizen}
+                    setSavedWords={setSavedWords}
+                  />
                 </td>
               </tr>
             ))}
