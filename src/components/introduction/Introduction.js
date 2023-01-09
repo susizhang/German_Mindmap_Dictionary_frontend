@@ -8,8 +8,8 @@ const Introduction = () => {
   return (
     <header className=" flex flex-col  items-center pt-12	">
       <h1 className="text-7xl font-bold text-center tracking-tight ">
-        10 Wörter in
-        <br /> einer Abfrage lernen
+        Use mindmap to
+        <br /> learn german words
       </h1>
       <p className="text-3xl font-normal text-slate-500 mt-6">
         Deutsch-Mindmap-Wörterbuch
@@ -18,10 +18,10 @@ const Introduction = () => {
       <div className=" border-2 border-gray-200  h-12 mt-6 rounded-full w-5/12 flex font-normal  ">
         <form className="flex ml-6 w-full items-center " action="">
           <BiSearch />
-          <input className="w-3/4 ml-2" type="search" value="unbefristet" />
+          <input className="w-3/4 ml-2" type="search" value="einkaufen" />
           <Link
             className="introduction-search-button w-1/3 h-full  rounded-full text-white  flex items-center justify-center  "
-            to="/searchResult/unbefristet"
+            to="/searchResult/einkaufen"
           >
             Jetzt probieren
           </Link>
