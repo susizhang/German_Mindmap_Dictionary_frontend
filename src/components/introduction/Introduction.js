@@ -16,7 +16,7 @@ const Introduction = () => {
         Learn 10 related words at once
       </p>
 
-      <div className=" border-2 border-gray-200  h-16 mt-6 rounded-full w-1/2 flex font-normal  ">
+      <div className=" border-2 border-gray-200  h-16 mt-6 rounded-full w-1/3 flex font-normal  ">
         <form className="flex ml-6 w-full items-center " action="">
           <BiSearch />
           <input
@@ -32,7 +32,7 @@ const Introduction = () => {
           </Link>
         </form>
       </div>
-      <div className=" grid grid-cols-8 box-border h-full w-ful  mt-12 justify-items-end">
+      <div className=" grid grid-cols-8 box-border h-full w-ful  mt-12 justify-items-end ">
         <img className="w-72 col-start-2 col-span-2 " src={logo} alt="logo" />
         <img className="col-span-4" src={firstPageImg} alt="beispiel" />
       </div>
