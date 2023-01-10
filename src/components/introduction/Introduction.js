@@ -28,7 +28,7 @@ const Introduction = () => {
             className="introduction-search-button w-1/3 h-full  rounded-full text-white  flex items-center justify-center  "
             to="/searchResult/einkaufen"
           >
-            Jetzt probieren
+            Try now
           </Link>
         </form>
       </div>

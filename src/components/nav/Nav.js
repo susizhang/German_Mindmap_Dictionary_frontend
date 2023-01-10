@@ -33,24 +33,25 @@ function Nav() {
 
   return (
     <>
-      <nav className=" flex  px-8 gap-8 justify-between grid grid-cols-8 items-center pt-6">
+      <nav className=" flex  px-8 gap-8 justify-between grid grid-cols-8 items-center pt-6 text-sm ">
         <div className="col-span-1">
           <Link to="/">
             <img className="w-28" src={logo} alt="logo" />
           </Link>
         </div>
         <div className="border-b-2 col-span-4 ">
-          <form className="flex " onSubmit={handleSubmit}>
+          <form type="text" className="flex " onSubmit={handleSubmit}>
             <BiSearch />
             <input
-              className="w-10/12"
               type="text"
-              placeholder="Schreiben Sie das gesuchte Wort auf"
+              placeholder="Write the word you want to search down"
+              autoComplete="off"
               value={input}
               onChange={(x) => setInput(x.target.value)}
+              className="w-10/12  search-input bg-transparent"
             />
             <button type="submit" onClick={handleSubmit}>
-              Suchen
+              Search
             </button>
           </form>
         </div>
@@ -61,15 +62,15 @@ function Nav() {
           </div>
         )}
         {!user && (
-          <div className="col-span-1">
+          <div className="col-span-1 ">
             <Link to="/login">Login</Link>
             <Link to="/signup">Signup</Link>
           </div>
         )}
 
         <div className="col-span-2 flex gap-8">
-          {user && <Link to="/wordbook">Mein Wörterbuch</Link>}
-          {!user && <Link to="/login">Mein Wörterbuch</Link>}
+          {user && <Link to="/wordbook">My Wordbook</Link>}
+          {!user && <Link to="/login">My Wordbook</Link>}
           <button
             type="button"
             onClick={toggleTheme}
