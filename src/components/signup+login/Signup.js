@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/userAuthContext";
 import { useSignup } from "../../hooks/useSignup";
 import { useForm } from "react-hook-form";
@@ -38,39 +38,48 @@ const Signup = () => {
   };
   if (user) return <Navigate to="/" />;
   return (
-    <form className="signup" onSubmit={handleSubmit(signUpHandleSubmit)}>
-      <h3>Sign Up</h3>
+    <div className="signUp-card">
+      <form className="signup" onSubmit={handleSubmit(signUpHandleSubmit)}>
+        <input
+          {...register("email")}
+          type="text"
+          placeholder="E-Mail"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="signUp-input"
+        />
 
-      <label>Email:</label>
-      <input
-        {...register("email")}
-        type="text"
-        placeholder="E-Mail"
-        name="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <p>{errors.email?.message}</p>
+        <p>{errors.email?.message}</p>
 
-      <label>Password:</label>
-      <input
-        {...register("password")}
-        type="password"
-        placeholder="Password"
-        name="password"
-        onChange={(e) => setPassword(e.target.value)}
-        autoComplete="on"
-        value={password}
-        required
-      />
-      <p>{errors.password?.message}</p>
+        <input
+          {...register("password")}
+          type="password"
+          placeholder="Password"
+          name="password"
+          onChange={(e) => setPassword(e.target.value)}
+          autoComplete="on"
+          value={password}
+          required
+          className="signUp-input"
+        />
 
-      <button type="submit" disabled={isLoading}>
-        Sign up
-      </button>
-      {error && <div>{error}</div>}
-    </form>
+        <p>{errors.password?.message}</p>
+
+        <button type="submit" disabled={isLoading} className="signUp-button">
+          Sign up
+        </button>
+        {error && <div>{error}</div>}
+
+        <div className="text-center">
+          Already have an account?
+          <Link to="/login" className="text-indigo-600  ">
+            Log in
+          </Link>
+        </div>
+      </form>
+    </div>
   );
 };
 

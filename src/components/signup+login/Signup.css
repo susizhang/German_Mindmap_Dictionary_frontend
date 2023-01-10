@@ -1,4 +1,33 @@
+.signUp-card {
+  width: 600px;
+  height: 500px;
+  display: flex;
+  margin: 0 auto;
+  padding-top: 100px;
+  justify-content: center;
+}
+
 .signup {
   display: flex;
   flex-direction: column;
+  font-size: 20px;
+  line-height: 60px;
+}
+
+.signUp-button {
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  background-color: var(--clr-fg);
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.signUp-input {
+  border: 3px solid black;
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 460px;
+  height: 60px;
+  font-size: 20px;
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import useLogin from "../../hooks/useLogin";
 import { useAuthContext } from "../../hooks/userAuthContext";
 import { useForm } from "react-hook-form";
@@ -38,37 +38,45 @@ const Login = () => {
   if (user) return <Navigate to="/" />;
 
   return (
-    <form onSubmit={handleSubmit(loginHandleSubmit)}>
-      <h3>Log in</h3>
-      <label>Email:</label>
-      <input
-        {...register("email")}
-        type="text"
-        placeholder="E-Mail"
-        name="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <br />
-      <label>Password:</label>
-      <input
-        {...register("password")}
-        type="password"
-        placeholder="Password"
-        name="password"
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-        required
-      />
-      <p>{errors.password?.message}</p>
-      <br />
+    <div>
+      <form onSubmit={handleSubmit(loginHandleSubmit)}>
+        <h3>Log in</h3>
+        <label>Email:</label>
+        <input
+          {...register("email")}
+          type="text"
+          placeholder="E-Mail"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <br />
+        <label>Password:</label>
+        <input
+          {...register("password")}
+          type="password"
+          placeholder="Password"
+          name="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          required
+        />
+        <p>{errors.password?.message}</p>
+        <br />
 
-      <button type="submit" disabled={isLoading}>
-        Log in
-      </button>
-      {error && <div>{error}</div>}
-    </form>
+        <button type="submit" disabled={isLoading}>
+          Log in
+        </button>
+        {error && <div>{error}</div>}
+      </form>
+      <div className="text-center">
+        No account?
+        <Link to="/signup" className="text-indigo-600  ">
+          Sign Up
+        </Link>
+      </div>
+    </div>
   );
 };
 
