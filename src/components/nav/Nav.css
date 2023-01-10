@@ -4,6 +4,7 @@
   width: 95%;
   margin: 0 auto;
   justify-content: space-between;
+  font-size: 20px;
 }
 .nav-left {
   margin-left: 1em;
@@ -78,6 +79,9 @@
     margin: 0 auto;
     margin-top: 20px;
     font-size: 20px;
+  }
+  .nav-search-input-850:focus {
+    outline: none;
   }
   .nav-logo {
     width: 250px;

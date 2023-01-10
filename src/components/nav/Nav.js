@@ -83,9 +83,16 @@ function Nav() {
             </div>
           )}
           {!user && (
-            <div className="flex justify-around  gap-2">
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Signup</Link>
+            <div className="flex justify-around  gap-5">
+              <Link to="/login" className="pt-2">
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                className="bg-green-500 rounded-l px-3 py-2 text-white font-bold "
+              >
+                Signup
+              </Link>
             </div>
           )}
 
@@ -101,7 +108,7 @@ function Nav() {
         <button
           type="button"
           onClick={toggleNavList}
-          className="btn btn--icon nav__hamburger"
+          className="btn  btn--icon nav__hamburger"
           aria-label="toggle navigation"
         >
           {showNavList ? <BiX /> : <BiMenu />}
@@ -120,7 +127,8 @@ function Nav() {
             autoComplete="off"
             value={input}
             onChange={(x) => setInput(x.target.value)}
-            className=" w-full bg-transparent"
+            className=" w-full bg-transparent nav-search-input-850
+} "
           />
         </form>
       </div>
