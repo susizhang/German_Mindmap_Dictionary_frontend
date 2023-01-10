@@ -4,6 +4,7 @@
   width: 95%;
   margin: 0 auto;
   justify-content: space-between;
+  font-size: 18px;
 }
 .nav-left {
   margin-left: 1em;
@@ -36,6 +37,7 @@
 .nav__hamburger {
   display: none;
 }
+
 @media (max-width: 720px) {
   .header {
     height: 6em;
@@ -86,38 +88,69 @@
     outline: none;
   }
   .nav-logo {
-    width: 250px;
-    margin-top: -13px;
+    margin-top: 9px;
+  }
+  .nav-logo-img {
+    width: 35px;
+  }
+  .nav-logo-text {
+    font-size: 28px;
+    font-weight: bold;
   }
 }
 @media (min-width: 851px) {
   .nav-search-form {
     width: 200px;
-    margin-left: 10px;
+    margin-left: 20px;
   }
   .nav-logo {
-    width: 160px;
-    margin-top: -13px;
+    margin-top: 9px;
+  }
+  .nav-logo-img {
+    width: 35px;
+  }
+  .nav-logo-text {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .nav-search-button {
+    display: none;
   }
 }
 
 @media (min-width: 960px) {
   .nav-search-form {
     width: 250px;
-    margin-left: 15px;
+    margin-left: 30px;
   }
   .nav-logo {
-    width: 200px;
-    margin-top: -13px;
+    margin-top: 9px;
+  }
+  .nav-logo-img {
+    width: 35px;
+  }
+  .nav-logo-text {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .nav-search-button {
+    display: none;
   }
 }
 @media (min-width: 1210px) {
   .nav-search-form {
     width: 350px;
+    margin-left: 30px;
   }
   .nav-logo {
-    width: 260px;
-    margin-top: -13px;
+    margin-top: 9px;
+  }
+  .nav-logo-img {
+    width: 50px;
+  }
+  .nav-logo-text {
+    font-size: 32px;
+    font-weight: bold;
   }
 }
 @media (min-width: 1380px) {
@@ -126,18 +159,30 @@
     margin-left: 30px;
   }
   .nav-logo {
-    width: 260px;
-    margin-top: -13px;
+    margin-top: 9px;
+  }
+  .nav-logo-img {
+    width: 50px;
+  }
+  .nav-logo-text {
+    font-size: 32px;
+    font-weight: bold;
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1580px) {
   .nav-search-form {
     width: 800px;
     margin-left: 30px;
   }
   .nav-logo {
-    width: 260px;
-    margin-top: -13px;
+    margin-top: 9px;
+  }
+  .nav-logo-img {
+    width: 50px;
+  }
+  .nav-logo-text {
+    font-size: 32px;
+    font-weight: bold;
   }
 }

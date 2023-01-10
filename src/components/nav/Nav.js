@@ -6,7 +6,7 @@ import { BiMenu } from "react-icons/bi";
 import { BiX } from "react-icons/bi";
 
 import { BiMoon } from "react-icons/bi";
-import logoName from "../../assets/logo-name.png";
+import logo from "../../assets/logo.png";
 import { ThemeContext } from "../../context/Theme";
 import { useLogout } from "../../hooks/useLogout";
 import "./Nav.css";
@@ -42,12 +42,13 @@ function Nav() {
     <>
       <nav className=" header flex  items-center  text-m ">
         <div className="nav-left">
-          <Link to="/">
-            <img className="nav-logo" src={logoName} alt="logo" />
+          <Link to="/" className="nav-logo flex items-center ">
+            <img className="nav-logo-img  mb-4" src={logo} alt="logo" />
+            <h2 className="nav-logo-text tracking-tight">MindGerman</h2>
           </Link>
           <form
             type="text"
-            className="nav-search-form  flex border-b-2"
+            className="nav-search-form  flex border-b-2 border-slate-800  "
             onSubmit={handleSubmit}
           >
             <BiSearch />
@@ -62,7 +63,7 @@ function Nav() {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="nav-search-button  text-green-500 font-bold "
+              className="nav-search-button "
             >
               Search
             </button>
@@ -117,7 +118,7 @@ function Nav() {
       <div>
         <form
           type="text"
-          className="nav-search-form-850px flex items-center  border-b-2"
+          className="nav-search-form-850px flex items-center  border-b-2 border-slate-800"
           onSubmit={handleSubmit}
         >
           <BiSearch />
@@ -127,7 +128,7 @@ function Nav() {
             autoComplete="off"
             value={input}
             onChange={(x) => setInput(x.target.value)}
-            className=" w-full bg-transparent nav-search-input-850
+            className=" w-full bg-transparent nav-search-input-850 
 } "
           />
         </form>
