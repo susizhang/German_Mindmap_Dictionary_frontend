@@ -11,3 +11,7 @@
   background-size: auto 155px;
   background-repeat: no-repeat;
 }
+
+.search-input:focus {
+  outline: none;
+}

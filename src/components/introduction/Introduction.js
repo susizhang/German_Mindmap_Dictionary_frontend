@@ -20,7 +20,7 @@ const Introduction = () => {
         <form className="flex ml-6 w-full items-center " action="">
           <BiSearch />
           <input
-            className="w-3/4 ml-2 text-2xl"
+            className="w-3/4 ml-2 text-2xl search-input bg-transparent"
             type="search"
             value="einkaufen"
             readOnly
