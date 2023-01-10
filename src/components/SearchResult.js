@@ -22,6 +22,8 @@ const SearchResult = () => {
     axios
       .get(`${baseUrl}/:${input}`)
       .then(({ data }) => {
+        setError(false);
+        // setSaveStatus(false);
         setResultPageData(data);
       })
       .catch((error) => {
