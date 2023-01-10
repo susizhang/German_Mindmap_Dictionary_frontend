@@ -47,13 +47,13 @@ function Nav() {
           </Link>
           <form
             type="text"
-            className="nav-search-form flex border-b-2"
+            className="nav-search-form  flex border-b-2"
             onSubmit={handleSubmit}
           >
             <BiSearch />
             <input
               type="text"
-              placeholder="Write the word you want to search down"
+              placeholder="word to search "
               autoComplete="off"
               value={input}
               onChange={(x) => setInput(x.target.value)}
@@ -71,7 +71,7 @@ function Nav() {
 
         <div
           style={{ display: showNavList ? "flex" : null }}
-          className="nav__list  gap-6 pr-12 "
+          className="nav__list  gap-6  "
         >
           {user && <Link to="/wordbook">My Wordbook</Link>}
           {!user && <Link to="/login">My Wordbook</Link>}
