@@ -54,8 +54,8 @@ const MyWordBook = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Wort</th>
-              <th>Notizen </th>
+              <th>Word</th>
+              <th>Notes </th>
               <th> </th>
               <th> </th>
               <th> </th>

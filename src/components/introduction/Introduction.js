@@ -23,6 +23,7 @@ const Introduction = () => {
             className="w-3/4 ml-2 text-2xl"
             type="search"
             value="einkaufen"
+            readOnly
           />
           <Link
             className="introduction-search-button w-1/3 h-full  rounded-full text-white  flex items-center justify-center  "

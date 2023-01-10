@@ -48,29 +48,30 @@ function Nav() {
               autoComplete="off"
               value={input}
               onChange={(x) => setInput(x.target.value)}
-              className="w-10/12  search-input bg-transparent"
+              className="  search-input w-full bg-transparent"
             />
             <button type="submit" onClick={handleSubmit}>
               Search
             </button>
           </form>
         </div>
-        {user && (
-          <div>
-            <span>{user.email}</span>
-            <button onClick={handleClick}>Log out</button>
-          </div>
-        )}
-        {!user && (
-          <div className="col-span-1 ">
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
-          </div>
-        )}
 
-        <div className="col-span-2 flex gap-8">
+        <div className="col-span-3 flex justify-around  ">
           {user && <Link to="/wordbook">My Wordbook</Link>}
           {!user && <Link to="/login">My Wordbook</Link>}
+
+          {user && (
+            <div className="flex justify-around gap-10">
+              <span>{user.email}</span>
+              <button onClick={handleClick}>Log out</button>
+            </div>
+          )}
+          {!user && (
+            <div className="flex justify-around  gap-10">
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Signup</Link>
+            </div>
+          )}
           <button
             type="button"
             onClick={toggleTheme}
