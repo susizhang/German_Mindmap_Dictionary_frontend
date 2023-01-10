@@ -2,9 +2,11 @@ import { useState, useContext } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { BiSun } from "react-icons/bi";
+import { BiMenu } from "react-icons/bi";
+import { BiX } from "react-icons/bi";
 
 import { BiMoon } from "react-icons/bi";
-import logo from "../../assets/logo.png";
+import logoName from "../../assets/logo-name.png";
 import { ThemeContext } from "../../context/Theme";
 import { useLogout } from "../../hooks/useLogout";
 import "./Nav.css";
@@ -14,6 +16,7 @@ import { useAuthContext } from "../../hooks/userAuthContext";
 function Nav() {
   const { logout } = useLogout();
   const [{ themeName, toggleTheme }] = useContext(ThemeContext);
+  const [showNavList, setShowNavList] = useState(false);
   const [input, setInput] = useState("");
   const navigate = useNavigate();
   const { user } = useAuthContext();
@@ -27,6 +30,9 @@ function Nav() {
       setInput("");
     }
   };
+  const toggleNavList = () => {
+    setShowNavList(!showNavList);
+  };
 
   const handleClick = () => {
     logout();
@@ -34,14 +40,16 @@ function Nav() {
 
   return (
     <>
-      <nav className=" flex  px-8 gap-8 justify-between grid grid-cols-8 items-center pt-6 text-m ">
-        <div className="col-span-1 flex-start pl-2 ">
+      <nav className=" header flex  items-center  text-m ">
+        <div className="nav-left">
           <Link to="/">
-            <img className="w-16" src={logo} alt="logo" />
+            <img className="nav-logo" src={logoName} alt="logo" />
           </Link>
-        </div>
-        <div className="col-span-3">
-          <form type="text" className="flex border-b-2" onSubmit={handleSubmit}>
+          <form
+            type="text"
+            className="nav-search-form flex border-b-2"
+            onSubmit={handleSubmit}
+          >
             <BiSearch />
             <input
               type="text"
@@ -49,30 +57,38 @@ function Nav() {
               autoComplete="off"
               value={input}
               onChange={(x) => setInput(x.target.value)}
-              className="  search-input w-full bg-transparent"
+              className=" nav-search-input w-full bg-transparent"
             />
-            <button type="submit" onClick={handleSubmit}>
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="nav-search-button"
+            >
               Search
             </button>
           </form>
         </div>
 
-        <div className="col-span-4 flex justify-end gap-10 pr-12 ">
+        <div
+          style={{ display: showNavList ? "flex" : null }}
+          className="nav__list  gap-6 pr-12 "
+        >
           {user && <Link to="/wordbook">My Wordbook</Link>}
           {!user && <Link to="/login">My Wordbook</Link>}
 
           {user && (
-            <div className="flex justify-around gap-10">
+            <div className="flex justify-around gap-2">
               <span>{user.email}</span>
               <button onClick={handleClick}>Log out</button>
             </div>
           )}
           {!user && (
-            <div className="flex justify-around  gap-10">
+            <div className="flex justify-around  gap-2">
               <Link to="/login">Login</Link>
               <Link to="/signup">Signup</Link>
             </div>
           )}
+
           <button
             type="button"
             onClick={toggleTheme}
@@ -82,7 +98,32 @@ function Nav() {
             {themeName === "dark" ? <BiSun /> : <BiMoon />}
           </button>
         </div>
+        <button
+          type="button"
+          onClick={toggleNavList}
+          className="btn btn--icon nav__hamburger"
+          aria-label="toggle navigation"
+        >
+          {showNavList ? <BiX /> : <BiMenu />}
+        </button>
       </nav>
+      <div>
+        <form
+          type="text"
+          className="nav-search-form-850px flex items-center  border-b-2"
+          onSubmit={handleSubmit}
+        >
+          <BiSearch />
+          <input
+            type="text"
+            placeholder="what you want to search"
+            autoComplete="off"
+            value={input}
+            onChange={(x) => setInput(x.target.value)}
+            className=" w-full bg-transparent"
+          />
+        </form>
+      </div>
 
       <Outlet />
     </>

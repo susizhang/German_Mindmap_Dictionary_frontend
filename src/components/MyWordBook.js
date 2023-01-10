@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import ScrollToTop from "react-scroll-to-top";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import logoName from "../assets/logo-name.png";
 import { baseUrl } from "../config";
 import AddingNotesModal from "./AddingNotesModal";
 
@@ -42,9 +43,9 @@ const MyWordBook = () => {
   if (!savedWords) return "Loading";
   return (
     <>
-      <nav className="flex ">
+      <nav className="flex gap-10 items-center">
         <Link to="/">
-          <img className="w-28" src={logo} alt="logo" />
+          <img className="w-80" src={logoName} alt="logo" />
         </Link>
         <Link to="/">back to HomePage</Link>
       </nav>
