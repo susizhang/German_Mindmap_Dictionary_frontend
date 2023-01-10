@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { BiSun } from "react-icons/bi";
+
 import { BiMoon } from "react-icons/bi";
 import logo from "../../assets/logo.png";
 import { ThemeContext } from "../../context/Theme";
@@ -33,14 +34,14 @@ function Nav() {
 
   return (
     <>
-      <nav className=" flex  px-8 gap-8 justify-between grid grid-cols-8 items-center pt-6 text-sm ">
-        <div className="col-span-1">
+      <nav className=" flex  px-8 gap-8 justify-between grid grid-cols-8 items-center pt-6 text-m ">
+        <div className="col-span-1 flex-start pl-2 ">
           <Link to="/">
-            <img className="w-28" src={logo} alt="logo" />
+            <img className="w-16" src={logo} alt="logo" />
           </Link>
         </div>
-        <div className="border-b-2 col-span-4 ">
-          <form type="text" className="flex " onSubmit={handleSubmit}>
+        <div className="col-span-3">
+          <form type="text" className="flex border-b-2" onSubmit={handleSubmit}>
             <BiSearch />
             <input
               type="text"
@@ -56,7 +57,7 @@ function Nav() {
           </form>
         </div>
 
-        <div className="col-span-3 flex justify-around  ">
+        <div className="col-span-4 flex justify-end gap-10 pr-12 ">
           {user && <Link to="/wordbook">My Wordbook</Link>}
           {!user && <Link to="/login">My Wordbook</Link>}
 
