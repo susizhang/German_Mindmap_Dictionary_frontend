@@ -62,7 +62,7 @@ function Nav() {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="nav-search-button"
+              className="nav-search-button  text-green-500 font-bold "
             >
               Search
             </button>
@@ -89,7 +89,7 @@ function Nav() {
               </Link>
               <Link
                 to="/signup"
-                className="bg-green-500 rounded-l px-3 py-2 text-white font-bold "
+                className=" text-white rounded-lg bg-green-600 px-3 py-2"
               >
                 Signup
               </Link>
@@ -123,7 +123,7 @@ function Nav() {
           <BiSearch />
           <input
             type="text"
-            placeholder="what you want to search"
+            placeholder="word to search"
             autoComplete="off"
             value={input}
             onChange={(x) => setInput(x.target.value)}

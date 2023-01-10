@@ -4,7 +4,6 @@
   width: 95%;
   margin: 0 auto;
   justify-content: space-between;
-  font-size: 20px;
 }
 .nav-left {
   margin-left: 1em;
@@ -75,10 +74,13 @@
   }
   .nav-search-form-850px {
     display: flex;
-    width: 560px;
+    width: 350px;
     margin: 0 auto;
     margin-top: 20px;
     font-size: 20px;
+  }
+  .nav-search-input-850 {
+    margin-left: 20px;
   }
   .nav-search-input-850:focus {
     outline: none;
@@ -131,7 +133,7 @@
 
 @media (min-width: 1536px) {
   .nav-search-form {
-    width: 600px;
+    width: 800px;
     margin-left: 30px;
   }
   .nav-logo {

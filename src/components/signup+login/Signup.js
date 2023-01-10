@@ -5,6 +5,7 @@ import { useSignup } from "../../hooks/useSignup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import "./Signup.css";
 
 const schema = yup.object().shape({
   email: yup.string().required("Email is required").email("Email is invalid"),
@@ -51,7 +52,7 @@ const Signup = () => {
         required
       />
       <p>{errors.email?.message}</p>
-      <br />
+
       <label>Password:</label>
       <input
         {...register("password")}
@@ -64,7 +65,6 @@ const Signup = () => {
         required
       />
       <p>{errors.password?.message}</p>
-      <br />
 
       <button type="submit" disabled={isLoading}>
         Sign up
