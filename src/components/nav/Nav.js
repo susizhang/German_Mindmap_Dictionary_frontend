@@ -21,7 +21,7 @@ function Nav() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!input) {
-      alert(" Bitte geben Sie zuerst das gesuchte Wort ein.");
+      alert(" Input is empty, please write word down at first.");
     } else {
       navigate(`/searchResult/${input}`);
       setInput("");
