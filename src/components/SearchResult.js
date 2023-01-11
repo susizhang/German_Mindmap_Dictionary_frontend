@@ -60,14 +60,21 @@ const SearchResult = () => {
   return (
     <>
       {!error && (
-        <div className="btn flex justify-end items-center gap-2 pr-20 ">
+        <div className="btn flex justify-end items-center gap-2 pr-20 text-lg">
           {saveStatus ? <AiFillStar /> : <BiStar />}
           {saveStatus ? (
             <button disabled onClick={saveWordHandler}>
               already saved in wordbook
             </button>
           ) : (
-            <button onClick={saveWordHandler}>Save to my wordbook</button>
+            <button
+              onClick={saveWordHandler}
+              className={
+                "hover:bg-green-600 hover:text-white hover:rounded-lg hover:px-3"
+              }
+            >
+              Save to my wordbook
+            </button>
           )}
         </div>
       )}

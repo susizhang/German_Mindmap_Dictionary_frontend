@@ -26,7 +26,7 @@ const Introduction = () => {
             readOnly
           />
           <Link
-            className="introduction-search-button w-1/3 h-full  rounded-full text-white  flex items-center justify-center  "
+            className="introduction-search-button w-1/3 h-full  rounded-full text-white  flex items-center justify-center bg-green-600 "
             to="/searchResult/einkaufen"
           >
             Try now
