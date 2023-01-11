@@ -39,7 +39,7 @@ const Signup = () => {
   if (user) return <Navigate to="/" />;
   return (
     <div className="signUp-card">
-      <form className="signup" onSubmit={handleSubmit(signUpHandleSubmit)}>
+      <form onSubmit={handleSubmit(signUpHandleSubmit)} className="signup">
         <input
           {...register("email")}
           type="text"

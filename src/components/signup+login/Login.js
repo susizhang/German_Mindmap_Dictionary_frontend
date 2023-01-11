@@ -5,6 +5,7 @@ import { useAuthContext } from "../../hooks/userAuthContext";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import "./Signup.css";
 
 const schema = yup.object().shape({
   email: yup.string().required("Email is required").email("Email is invalid"),
@@ -38,10 +39,8 @@ const Login = () => {
   if (user) return <Navigate to="/" />;
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(loginHandleSubmit)}>
-        <h3>Log in</h3>
-        <label>Email:</label>
+    <div className="signUp-card">
+      <form onSubmit={handleSubmit(loginHandleSubmit)} className="signup">
         <input
           {...register("email")}
           type="text"
@@ -50,9 +49,10 @@ const Login = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className="signUp-input"
         />
-        <br />
-        <label>Password:</label>
+        <p className="text-red-700">{errors.email?.message}</p>
+
         <input
           {...register("password")}
           type="password"
@@ -61,21 +61,21 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           required
+          className="signUp-input"
         />
-        <p>{errors.password?.message}</p>
-        <br />
+        <p className="text-red-700">{errors.password?.message}</p>
 
-        <button type="submit" disabled={isLoading}>
+        <button type="submit" disabled={isLoading} className="signUp-button">
           Log in
         </button>
-        {error && <div>{error}</div>}
+        {error && <div className="text-red-700">{error}</div>}
+        <div className="text-center">
+          No account?
+          <Link to="/signup" className="text-indigo-600  ">
+            Sign Up
+          </Link>
+        </div>
       </form>
-      <div className="text-center">
-        No account?
-        <Link to="/signup" className="text-indigo-600  ">
-          Sign Up
-        </Link>
-      </div>
     </div>
   );
 };
