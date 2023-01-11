@@ -30,3 +30,14 @@
 .errorPage {
   width: 600px;
 }
+
+.modal-container {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+.customModal {
+  border-radius: 8px;
+}

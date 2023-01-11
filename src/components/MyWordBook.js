@@ -49,16 +49,16 @@ const MyWordBook = () => {
         <table className="w-full text-lg text-left text-gray-500  ">
           <thead className="text-base text-gray-700 uppercase bg-gray-100 ">
             <tr>
-              <th scope="col" class="px-6 py-3"></th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3"></th>
+              <th scope="col" className="px-6 py-3">
                 Word
               </th>
-              <th scope="col" class="pr-36 py-3">
+              <th scope="col" className="pr-36 py-3">
                 Notes
               </th>
-              <th scope="col" class=" py-3"></th>
-              <th scope="col" class="pr-1 py-3"></th>
-              <th scope="col" class=" py-3"></th>
+              <th scope="col" className=" py-3"></th>
+              <th scope="col" className="pr-1 py-3"></th>
+              <th scope="col" className=" py-3"></th>
             </tr>
           </thead>
           <tbody>
