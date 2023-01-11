@@ -1,23 +1,20 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import ScrollToTop from "react-scroll-to-top";
-import { useEffect, useState } from "react";
+
 import axios from "axios";
-import logoName from "../assets/logo-name.png";
+
+import SavedWordContext from "../context/SavedWordContext";
+import { useContext } from "react";
+
 import { baseUrl } from "../config";
 import AddingNotesModal from "./AddingNotesModal";
 
 const MyWordBook = () => {
-  const [savedWords, setSavedWords] = useState();
+  const { savedWords, setSavedWords } = useContext(SavedWordContext);
+  console.log(" wordbook", savedWords);
 
   const navigate = useNavigate();
-
-  useEffect(() => {
-    axios.get(`${baseUrl}/word/allWords`).then(({ data }) => {
-      console.log(data.SavedWordsList);
-      setSavedWords(data.SavedWordsList);
-    });
-  }, []);
 
   const deleteHandler = (wordId) => {
     try {
@@ -44,8 +41,9 @@ const MyWordBook = () => {
   return (
     <>
       <nav className="flex gap-10 items-center">
-        <Link to="/">
-          <img className="w-80" src={logoName} alt="logo" />
+        <Link to="/" className="nav-logo flex items-center ">
+          <img className="nav-logo-img  mb-4" src={logo} alt="logo" />
+          <h2 className="nav-logo-text tracking-tight">MindGerman</h2>
         </Link>
         <Link to="/">back to HomePage</Link>
       </nav>
