@@ -7,8 +7,13 @@ import { useAuthContext } from "../hooks/userAuthContext";
 import { BiStar } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import errorPage from "../assets/errorPage.png";
+import SavedWordContext from "../context/SavedWordContext";
+import { useContext } from "react";
 
 const SearchResult = () => {
+  const { savedWords } = useContext(SavedWordContext);
+  console.log("resultPage", savedWords);
+
   const [resultPageData, setResultPageData] = useState("");
   const [saveStatus, setSaveStatus] = useState(false);
   const [error, setError] = useState(false);
@@ -23,7 +28,6 @@ const SearchResult = () => {
       .get(`${baseUrl}/:${input}`)
       .then(({ data }) => {
         setError(false);
-        // setSaveStatus(false);
         setResultPageData(data);
       })
       .catch((error) => {
@@ -31,6 +35,13 @@ const SearchResult = () => {
         setError(true);
       });
   }, [input]);
+
+  useEffect(() => {
+    const isSaved =
+      savedWords?.filter((word) => word.Wort === input).length > 0;
+    // console.log(" ", isSaved);
+    setSaveStatus(isSaved);
+  }, [savedWords, input]);
 
   const saveWordHandler = () => {
     if (user) {
@@ -50,13 +61,13 @@ const SearchResult = () => {
     <>
       {!error && (
         <div className="btn flex justify-end items-center gap-2 pr-20 ">
-          {saveStatus ? <BiStar /> : <AiFillStar />}
+          {saveStatus ? <AiFillStar /> : <BiStar />}
           {saveStatus ? (
-            <button onClick={saveWordHandler}>Save to my wordbook</button>
-          ) : (
             <button disabled onClick={saveWordHandler}>
               already saved in wordbook
             </button>
+          ) : (
+            <button onClick={saveWordHandler}>Save to my wordbook</button>
           )}
         </div>
       )}

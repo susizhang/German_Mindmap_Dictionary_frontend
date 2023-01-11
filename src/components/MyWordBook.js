@@ -1,18 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import ScrollToTop from "react-scroll-to-top";
-
 import axios from "axios";
-
 import SavedWordContext from "../context/SavedWordContext";
 import { useContext } from "react";
-
 import { baseUrl } from "../config";
 import AddingNotesModal from "./AddingNotesModal";
 
 const MyWordBook = () => {
   const { savedWords, setSavedWords } = useContext(SavedWordContext);
-  console.log(" wordbook", savedWords);
+  //   console.log(" wordbook", savedWords);
 
   const navigate = useNavigate();
 
