@@ -4,6 +4,7 @@ import { useAuthContext } from "../../hooks/userAuthContext";
 import { useSignup } from "../../hooks/useSignup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { BiArrowBack } from "react-icons/bi";
 import * as yup from "yup";
 import "./Signup.css";
 
@@ -38,48 +39,54 @@ const Signup = () => {
   };
   if (user) return <Navigate to="/" />;
   return (
-    <div className="signUp-card">
-      <form onSubmit={handleSubmit(signUpHandleSubmit)} className="signup">
-        <input
-          {...register("email")}
-          type="text"
-          placeholder="E-Mail"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="signUp-input"
-        />
+    <>
+      <div className="backToHome mt-10">
+        <BiArrowBack />
+        <Link to="/">back to home page</Link>
+      </div>
+      <div className="signUp-card ">
+        <form onSubmit={handleSubmit(signUpHandleSubmit)} className="signup">
+          <input
+            {...register("email")}
+            type="text"
+            placeholder="E-Mail"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="signUp-input"
+          />
 
-        <p>{errors.email?.message}</p>
+          <p>{errors.email?.message}</p>
 
-        <input
-          {...register("password")}
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete="on"
-          value={password}
-          required
-          className="signUp-input"
-        />
+          <input
+            {...register("password")}
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="on"
+            value={password}
+            required
+            className="signUp-input"
+          />
 
-        <p>{errors.password?.message}</p>
+          <p>{errors.password?.message}</p>
 
-        <button type="submit" disabled={isLoading} className="signUp-button">
-          Sign up
-        </button>
-        {error && <div>{error}</div>}
+          <button type="submit" disabled={isLoading} className="signUp-button">
+            Sign up
+          </button>
+          {error && <div>{error}</div>}
 
-        <div className="text-center">
-          Already have an account?
-          <Link to="/login" className="text-indigo-600  ">
-            Log in
-          </Link>
-        </div>
-      </form>
-    </div>
+          <div className="text-center">
+            Already have an account?
+            <Link to="/login" className="text-indigo-600  ">
+              Log in
+            </Link>
+          </div>
+        </form>
+      </div>
+    </>
   );
 };
 
