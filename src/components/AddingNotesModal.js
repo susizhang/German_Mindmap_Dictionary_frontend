@@ -29,9 +29,19 @@ const AddingNotesModal = ({ wordId, notes }) => {
   return (
     <div>
       {!notes ? (
-        <button onClick={onOpenModal}>add notes</button>
+        <button
+          onClick={onOpenModal}
+          className="font-medium  bg-indigo-500  text-white px-2 py-1 rounded-md "
+        >
+          add notes
+        </button>
       ) : (
-        <button onClick={onOpenModal}>edit notes</button>
+        <button
+          onClick={onOpenModal}
+          className="font-medium bg-amber-500  text-white px-2 py-1 rounded-md "
+        >
+          edit notes
+        </button>
       )}
       <Modal open={open} onClose={onCloseModal} center>
         {!notes ? (
