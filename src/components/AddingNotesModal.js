@@ -44,7 +44,7 @@ const AddingNotesModal = ({ wordId, notes }) => {
         </button>
       )}
       <Modal open={open} onClose={onCloseModal} center>
-        <div>
+        <div className="modal-container">
           {!notes ? (
             <textarea
               name="notes"
