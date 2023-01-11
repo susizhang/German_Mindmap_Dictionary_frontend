@@ -31,14 +31,14 @@ const AddingNotesModal = ({ wordId, notes }) => {
       {!notes ? (
         <button
           onClick={onOpenModal}
-          className="font-medium  bg-indigo-500  text-white px-2 py-1 rounded-md "
+          className="font-medium border-2 border-indigo-500 px-2 py-1 rounded-md "
         >
           add notes
         </button>
       ) : (
         <button
           onClick={onOpenModal}
-          className="font-medium bg-amber-500  text-white px-2 py-1 rounded-md "
+          className="font-medium border-2 border-amber-500  px-2 py-1 rounded-md "
         >
           edit notes
         </button>
