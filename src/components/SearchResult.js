@@ -19,7 +19,7 @@ const SearchResult = () => {
   const [error, setError] = useState(false);
   const { input } = useParams();
   const { user } = useAuthContext();
-  const navigate = useNavigate();
+
   //   console.log("Input ", input);
   //   console.log(" ", resultPageData);
 
@@ -51,7 +51,7 @@ const SearchResult = () => {
       alert("Save successfully");
       setSaveStatus(true);
     } else {
-      navigate("/login");
+      alert("Please log in at first. ");
     }
   };
 
