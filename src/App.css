@@ -49,3 +49,11 @@
 .customModal {
   border-radius: 8px;
 }
+
+.backToHome {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-left: 50px;
+  font-size: 20px;
+}

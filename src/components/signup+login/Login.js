@@ -4,6 +4,7 @@ import useLogin from "../../hooks/useLogin";
 import { useAuthContext } from "../../hooks/userAuthContext";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { BiArrowBack } from "react-icons/bi";
 import * as yup from "yup";
 import "./Signup.css";
 
@@ -39,44 +40,50 @@ const Login = () => {
   if (user) return <Navigate to="/" />;
 
   return (
-    <div className="signUp-card">
-      <form onSubmit={handleSubmit(loginHandleSubmit)} className="signup">
-        <input
-          {...register("email")}
-          type="text"
-          placeholder="E-Mail"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="signUp-input"
-        />
-        <p className="text-red-700">{errors.email?.message}</p>
+    <>
+      <div className="backToHome mt-10">
+        <BiArrowBack />
+        <Link to="/">back to home page</Link>
+      </div>
+      <div className="signUp-card">
+        <form onSubmit={handleSubmit(loginHandleSubmit)} className="signup">
+          <input
+            {...register("email")}
+            type="text"
+            placeholder="E-Mail"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="signUp-input"
+          />
+          <p className="text-red-700">{errors.email?.message}</p>
 
-        <input
-          {...register("password")}
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          required
-          className="signUp-input"
-        />
-        <p className="text-red-700">{errors.password?.message}</p>
+          <input
+            {...register("password")}
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            required
+            className="signUp-input"
+          />
+          <p className="text-red-700">{errors.password?.message}</p>
 
-        <button type="submit" disabled={isLoading} className="signUp-button">
-          Log in
-        </button>
-        {error && <div className="text-red-700">{error}</div>}
-        <div className="text-center">
-          No account?
-          <Link to="/signup" className="text-indigo-600  ">
-            Sign Up
-          </Link>
-        </div>
-      </form>
-    </div>
+          <button type="submit" disabled={isLoading} className="signUp-button">
+            Log in
+          </button>
+          {error && <div className="text-red-700">{error}</div>}
+          <div className="text-center">
+            No account?
+            <Link to="/signup" className="text-indigo-600  ">
+              Sign Up
+            </Link>
+          </div>
+        </form>
+      </div>
+    </>
   );
 };
 

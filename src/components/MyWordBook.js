@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { baseUrl } from "../config";
 import AddingNotesModal from "./AddingNotesModal";
 import { RiDeleteBin4Line } from "react-icons/ri";
+import { BiArrowBack } from "react-icons/bi";
 
 const MyWordBook = () => {
   const { savedWords, setSavedWords } = useContext(SavedWordContext);
@@ -38,12 +39,15 @@ const MyWordBook = () => {
   if (!savedWords) return "Loading";
   return (
     <>
-      <nav className="flex gap-10 items-center">
-        <Link to="/" className="nav-logo flex items-center ">
+      <nav className="flex gap-10 items-center  pb-6">
+        <div className="backToHome">
+          <BiArrowBack />
+          <Link to="/">back to home page</Link>
+        </div>
+        <Link to="/" className="nav-logo flex items-center  ">
           <img className="nav-logo-img  mb-4" src={logo} alt="logo" />
           <h2 className="nav-logo-text tracking-tight">MindGerman</h2>
         </Link>
-        <Link to="/">back to HomePage</Link>
       </nav>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-10/12 m-auto ">
         <table className="w-full text-lg text-left text-gray-500  ">
@@ -74,7 +78,7 @@ const MyWordBook = () => {
                 <td className=" py-4">
                   <button
                     onClick={() => showInMindmapHandler(word.Wort)}
-                    className="font-medium text-indigo-600 "
+                    className="font-medium bg-green-500 px-2 py-2 rounded-md  text-white"
                   >
                     show in mindmap
                   </button>
