@@ -30,7 +30,7 @@ function Nav() {
         position: toast.POSITION.TOP_CENTER,
       });
     } else {
-      navigate(`/searchResult/${input}`);
+      navigate(`/home/searchResult/${input}`);
       setInput("");
     }
   };
@@ -46,7 +46,7 @@ function Nav() {
     <>
       <nav className=" header flex  items-center  text-m ">
         <div className="nav-left">
-          <Link to="/" className="nav-logo flex items-center ">
+          <Link to="/home" className="nav-logo flex items-center ">
             <img className="nav-logo-img  mb-4" src={logo} alt="logo" />
             <h2 className="nav-logo-text tracking-tight">MindGerman</h2>
           </Link>

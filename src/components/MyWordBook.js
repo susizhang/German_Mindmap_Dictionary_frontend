@@ -37,7 +37,7 @@ const MyWordBook = () => {
   };
 
   const showInMindmapHandler = (word) => {
-    navigate(`/searchResult/${word}`);
+    navigate(`/home/searchResult/${word}`);
   };
 
   if (!savedWords) return "Loading";
@@ -46,9 +46,9 @@ const MyWordBook = () => {
       <nav className="flex gap-10 items-center  pb-6">
         <div className="backToHome">
           <BiArrowBack />
-          <Link to="/">back to home page</Link>
+          <Link to="/home">back to home page</Link>
         </div>
-        <Link to="/" className="nav-logo flex items-center  ">
+        <Link to="/home" className="nav-logo flex items-center  ">
           <img className="nav-logo-img  mb-4" src={logo} alt="logo" />
           <h2 className="nav-logo-text tracking-tight">MindGerman</h2>
         </Link>

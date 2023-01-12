@@ -21,7 +21,6 @@ const AddingNotesModal = ({ wordId, notes }) => {
           Notizen: editNotesInput ? editNotesInput : notesInput,
         })
         .then((res) => {
-          toast.success("Save successfully");
           window.location.reload();
         });
     } catch (error) {

@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col ">
-      <Link to="/introduction" className="m-auto mb-10">
+      <Link to="/" className="m-auto mb-10">
         Introduction page
       </Link>
       <main>

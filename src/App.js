@@ -15,13 +15,13 @@ function App() {
   const [{ themeName }] = useContext(ThemeContext);
   return (
     <div className={`${themeName} app`}>
-      <ToastContainer autoClose={3000} />
+      <ToastContainer autoClose={3000} draggablePercent={60} />
       <Routes>
-        <Route path="introduction" element={<Introduction />} />
+        <Route path="/" element={<Introduction />} />
 
-        <Route path="/" element={<Nav />}>
+        <Route path="/home" element={<Nav />}>
           <Route index element={<Home />} />
-          <Route path="/searchResult/:input" element={<SearchResult />} />
+          <Route path="/home/searchResult/:input" element={<SearchResult />} />
         </Route>
 
         <Route path="/wordbook" element={<MyWordBook />} />

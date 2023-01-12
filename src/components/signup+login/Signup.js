@@ -37,12 +37,12 @@ const Signup = () => {
     // console.log(email, password);
     await signup(email, password);
   };
-  if (user) return <Navigate to="/" />;
+  if (user) return <Navigate to="/home" />;
   return (
     <>
       <div className="backToHome mt-10">
         <BiArrowBack />
-        <Link to="/">back to home page</Link>
+        <Link to="/home">back to home page</Link>
       </div>
       <div className="signUp-card ">
         <form onSubmit={handleSubmit(signUpHandleSubmit)} className="signup">

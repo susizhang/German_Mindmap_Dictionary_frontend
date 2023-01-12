@@ -27,14 +27,13 @@ const Introduction = () => {
           />
           <Link
             className="introduction-search-button w-1/3 h-full  rounded-full text-white  flex items-center justify-center bg-green-600  "
-            to="/searchResult/einkaufen"
+            to="/home/searchResult/einkaufen"
           >
             Try now
           </Link>
         </form>
       </div>
       <div className=" grid grid-cols-5 box-border h-full w-ful  mt-12 justify-items-end ">
-        {/* <img className="w-72 col-start-2 col-span-2 " src={logo} alt="logo" /> */}
         <img
           className=" col-start-2 col-span-3 "
           src={firstPageImg}
