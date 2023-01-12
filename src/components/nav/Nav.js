@@ -122,7 +122,7 @@ function Nav() {
       <div>
         <form
           type="text"
-          className="nav-search-form-850px flex items-center  border-b-2 border-slate-800"
+          className="nav-search-form-1060px flex items-center  border-b-2 border-slate-800"
           onSubmit={handleSubmit}
         >
           <BiSearch />
@@ -132,7 +132,7 @@ function Nav() {
             autoComplete="off"
             value={input}
             onChange={(x) => setInput(x.target.value)}
-            className=" w-full bg-transparent nav-search-input-850 
+            className=" w-full bg-transparent nav-search-input-1060 
 } "
           />
         </form>
