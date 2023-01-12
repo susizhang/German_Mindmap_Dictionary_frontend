@@ -20,6 +20,7 @@
     "react-router-dom": "^6.5.0",
     "react-scripts": "5.0.1",
     "react-scroll-to-top": "^3.0.0",
+    "react-toastify": "^9.1.1",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },

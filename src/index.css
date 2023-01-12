@@ -4,6 +4,9 @@ body {
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
 }
+#root {
+  --toastify-toast-width: 500px;
+}
 
 @tailwind base;
 @tailwind components;

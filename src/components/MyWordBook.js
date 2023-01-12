@@ -3,6 +3,8 @@ import logo from "../assets/logo.png";
 import ScrollToTop from "react-scroll-to-top";
 import axios from "axios";
 import SavedWordContext from "../context/SavedWordContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { baseUrl } from "../config";
 import AddingNotesModal from "./AddingNotesModal";
@@ -18,7 +20,7 @@ const MyWordBook = () => {
   const deleteHandler = (wordId) => {
     try {
       axios.delete(`${baseUrl}/word/${wordId}`).then((res) => {
-        alert(" Delete successfully");
+        toast.success("Delete successfully");
         // window.location.reload();
 
         const newSavedWords = savedWords.filter((word) => {
@@ -28,6 +30,7 @@ const MyWordBook = () => {
         setSavedWords(newSavedWords);
       });
     } catch (error) {
+        
       console.log(" delete", error.message);
     }
   };

@@ -9,6 +9,8 @@ import { BiMoon } from "react-icons/bi";
 import logo from "../../assets/logo.png";
 import { ThemeContext } from "../../context/Theme";
 import { useLogout } from "../../hooks/useLogout";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Nav.css";
 
 import { useAuthContext } from "../../hooks/userAuthContext";
@@ -24,7 +26,9 @@ function Nav() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!input) {
-      alert(" Input is empty, please write word down at first.");
+      toast.error("Hey, input is empty, please write word down at first.", {
+        position: toast.POSITION.TOP_CENTER,
+      });
     } else {
       navigate(`/searchResult/${input}`);
       setInput("");

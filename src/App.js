@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import SearchResult from "./components/SearchResult";
 import MyWordBook from "./components/MyWordBook";
 import { ThemeContext } from "./context/Theme";
+import { ToastContainer } from "react-toastify";
 import Introduction from "./components/introduction/Introduction";
 import Nav from "./components/nav/Nav";
 import Signup from "./components/signup+login/Signup";
@@ -14,6 +15,7 @@ function App() {
   const [{ themeName }] = useContext(ThemeContext);
   return (
     <div className={`${themeName} app`}>
+      <ToastContainer autoClose={2500} />
       <Routes>
         <Route path="introduction" element={<Introduction />} />
 

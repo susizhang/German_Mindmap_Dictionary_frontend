@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { baseUrl } from "../config";
 
@@ -19,10 +21,11 @@ const AddingNotesModal = ({ wordId, notes }) => {
           Notizen: editNotesInput ? editNotesInput : notesInput,
         })
         .then((res) => {
+          toast.success("Save successfully");
           window.location.reload();
         });
     } catch (error) {
-      console.log(" delete", error.message);
+      console.log(" saveNotes", error.message);
     }
   };
 

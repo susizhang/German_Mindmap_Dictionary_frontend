@@ -4,6 +4,8 @@ import axios from "axios";
 import { baseUrl } from "../config";
 import SearchResultMarkdownMap from "./SearchResultMarkdownMap";
 import { useAuthContext } from "../hooks/userAuthContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { BiStar } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
 import errorPage from "../assets/errorPage.png";
@@ -48,10 +50,12 @@ const SearchResult = () => {
       axios.post(`${baseUrl}/word/save`, {
         Wort: input,
       });
-      alert("Save successfully");
+      toast.success("Save successfully");
       setSaveStatus(true);
     } else {
-      alert("Please log in at first. ");
+      toast.error("Please log in at first.", {
+        position: toast.POSITION.TOP_CENTER,
+      });
     }
   };
 
