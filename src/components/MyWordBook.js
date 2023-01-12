@@ -21,12 +21,11 @@ const MyWordBook = () => {
   const deleteHandler = (wordId) => {
     try {
       axios
-        .delete(
-          `${baseUrl}/word/${wordId},{
+        .delete(`${baseUrl}/word/${wordId}`, {
           headers: {
-            Authorization: Bearer ${user.token},
-          }`
-        )
+            Authorization: `Bearer ${user.token}`,
+          },
+        })
         .then((res) => {
           toast.success("Delete successfully", {
             position: toast.POSITION.TOP_LEFT,

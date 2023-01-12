@@ -16,15 +16,9 @@ const AddingNotesModal = ({ wordId, notes }) => {
   const addNotesHandler = async (e) => {
     try {
       axios
-        .patch(
-          `${baseUrl}/word/${wordId},{
-          headers: {
-            Authorization: Bearer ${user.token},
-          }`,
-          {
-            Notizen: editNotesInput ? editNotesInput : notesInput,
-          }
-        )
+        .patch(`${baseUrl}/word/${wordId}`, {
+          Notizen: editNotesInput ? editNotesInput : notesInput,
+        })
         .then((res) => {
           window.location.reload();
         });
