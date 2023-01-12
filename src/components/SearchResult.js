@@ -92,7 +92,7 @@ const SearchResult = () => {
           resultPageData={resultPageData}
         />
       ) : (
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center container-pb-900px">
           <img src={errorPage} alt="404" className="errorPage" />
           <h3 className="text-4xl">Can`t find this word, please try again</h3>
         </div>
