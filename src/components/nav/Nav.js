@@ -26,7 +26,7 @@ function Nav() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!input) {
-      toast.error("Hey, input is empty, please write word down at first.", {
+      toast.error("Input is empty, please write word down at first.", {
         position: toast.POSITION.TOP_CENTER,
       });
     } else {
