@@ -4,6 +4,8 @@
 
 .introduction-search-button {
   background-color: #18cd82;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .intro-mindmap {
@@ -18,4 +20,8 @@
 
 .search-input:focus {
   outline: none;
+}
+
+.intro-img {
+  width: 1100px;
 }
