@@ -10,27 +10,35 @@ import { baseUrl } from "../config";
 import AddingNotesModal from "./AddingNotesModal";
 import { RiDeleteBin4Line } from "react-icons/ri";
 import { BiArrowBack } from "react-icons/bi";
+import { useAuthContext } from "../hooks/userAuthContext";
 
 const MyWordBook = () => {
   const { savedWords, setSavedWords } = useContext(SavedWordContext);
   //   console.log(" wordbook", savedWords);
-
+  const { user } = useAuthContext();
   const navigate = useNavigate();
 
   const deleteHandler = (wordId) => {
     try {
-      axios.delete(`${baseUrl}/word/${wordId}`).then((res) => {
-        toast.success("Delete successfully", {
-          position: toast.POSITION.TOP_CENTER,
-        });
-        // window.location.reload();
+      axios
+        .delete(
+          `${baseUrl}/word/${wordId},{
+          headers: {
+            Authorization: Bearer ${user.token},
+          }`
+        )
+        .then((res) => {
+          toast.success("Delete successfully", {
+            position: toast.POSITION.TOP_CENTER,
+          });
+          // window.location.reload();
 
-        const newSavedWords = savedWords.filter((word) => {
-          return word._id !== wordId;
+          const newSavedWords = savedWords.filter((word) => {
+            return word._id !== wordId;
+          });
+          // console.log(" newSavedWords", newSavedWords);
+          setSavedWords(newSavedWords);
         });
-        // console.log(" newSavedWords", newSavedWords);
-        setSavedWords(newSavedWords);
-      });
     } catch (error) {
       console.log(" delete", error.message);
     }

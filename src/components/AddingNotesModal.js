@@ -1,25 +1,30 @@
 import { useState } from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { baseUrl } from "../config";
+import { useAuthContext } from "../hooks/userAuthContext";
 
 const AddingNotesModal = ({ wordId, notes }) => {
   const [notesInput, setNotesInput] = useState();
   const [editNotesInput, setEditNotesInput] = useState(notes);
   const [open, setOpen] = useState(false);
-
+  const { user } = useAuthContext();
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
 
   const addNotesHandler = async (e) => {
     try {
       axios
-        .patch(`${baseUrl}/word/${wordId}`, {
-          Notizen: editNotesInput ? editNotesInput : notesInput,
-        })
+        .patch(
+          `${baseUrl}/word/${wordId},{
+          headers: {
+            Authorization: Bearer ${user.token},
+          }`,
+          {
+            Notizen: editNotesInput ? editNotesInput : notesInput,
+          }
+        )
         .then((res) => {
           window.location.reload();
         });

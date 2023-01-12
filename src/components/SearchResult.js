@@ -26,7 +26,13 @@ const SearchResult = () => {
 
   useEffect(() => {
     axios
-      .get(`${baseUrl}/:${input}`)
+      .get(
+        `${baseUrl}/:${input},{
+          headers: {
+            Authorization: Bearer ${user.token},
+          },
+        }`
+      )
       .then(({ data }) => {
         setError(false);
         setResultPageData(data);
@@ -35,7 +41,7 @@ const SearchResult = () => {
         console.log("Cannot find this word");
         setError(true);
       });
-  }, [input]);
+  }, [input, user]);
 
   useEffect(() => {
     const isSaved =
