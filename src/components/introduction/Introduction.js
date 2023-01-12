@@ -7,8 +7,8 @@ import "./introduction.css";
 
 const Introduction = () => {
   return (
-    <div className=" flex flex-col  items-center pt-20  intro-container	">
-      <h1 className="text-8xl font-bold text-center tracking-tight leading-none">
+    <div className=" flex flex-col  items-center pt-16  intro-container	">
+      <h1 className=" font-bold text-center tracking-tight leading-none">
         Use <span className="intro-mindmap">mindmap</span> to
         <br /> learn german words
       </h1>

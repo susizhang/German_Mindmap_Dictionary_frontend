@@ -2,6 +2,9 @@
   background-color: inherit;
 }
 
+.intro-container h1 {
+  font-size: 100px;
+}
 .introduction-search-button {
   background-color: #18cd82;
   font-size: 22px;
@@ -23,5 +26,6 @@
 }
 
 .intro-img {
-  width: 1100px;
+  width: 1350px;
+  margin: 10px auto;
 }
