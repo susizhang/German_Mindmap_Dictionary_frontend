@@ -39,8 +39,8 @@ const Signup = () => {
   };
   if (user) return <Navigate to="/home" />;
   return (
-    <>
-      <div className="backToHome mt-10">
+    <div className="container-pb-900px">
+      <div className="backToHome pt-10">
         <BiArrowBack />
         <Link to="/home">back to home page</Link>
       </div>
@@ -86,7 +86,7 @@ const Signup = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

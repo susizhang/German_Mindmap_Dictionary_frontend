@@ -42,8 +42,8 @@ const MyWordBook = () => {
 
   if (!savedWords) return "Loading";
   return (
-    <>
-      <nav className="flex gap-10 items-center  pb-6">
+    <div className="container-pb-900px">
+      <nav className="flex gap-10 items-center pt-6 pb-10">
         <div className="backToHome">
           <BiArrowBack />
           <Link to="/home">back to home page</Link>
@@ -53,7 +53,7 @@ const MyWordBook = () => {
           <h2 className="nav-logo-text tracking-tight">MindGerman</h2>
         </Link>
       </nav>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-10/12 m-auto ">
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-10/12 m-auto  ">
         <table className="w-full text-base text-left text-gray-500  ">
           <thead className="text-base text-gray-700 uppercase bg-gray-100 ">
             <tr>
@@ -75,7 +75,7 @@ const MyWordBook = () => {
                 <th scope="row" className="px-6 py-4">
                   {index + 1}
                 </th>
-                <td className="px-6 py-4 text-lg font-bold text-gray-900 whitespace-nowrap ">
+                <td className="px-6 py-4 text-lg  text-gray-900 whitespace-nowrap ">
                   {word.Wort}
                 </td>
                 <td className="pr-36 py-4">{word.Notizen}</td>
@@ -107,7 +107,7 @@ const MyWordBook = () => {
       </div>
 
       <ScrollToTop smooth color="#6f00ff" />
-    </>
+    </div>
   );
 };
 
