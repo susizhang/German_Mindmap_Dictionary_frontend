@@ -28,7 +28,7 @@ function Nav() {
     if (!input) {
       toast.error("Hey, input is empty, please write word down at first.", {
         position: toast.POSITION.TOP_CENTER,
-      },);
+      });
     } else {
       navigate(`/searchResult/${input}`);
       setInput("");
@@ -52,7 +52,7 @@ function Nav() {
           </Link>
           <form
             type="text"
-            className="nav-search-form  flex border-b-2 border-slate-800  "
+            className="nav-search-form  flex   "
             onSubmit={handleSubmit}
           >
             <BiSearch />
