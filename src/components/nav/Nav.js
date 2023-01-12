@@ -28,7 +28,7 @@ function Nav() {
     if (!input) {
       toast.error("Hey, input is empty, please write word down at first.", {
         position: toast.POSITION.TOP_CENTER,
-      });
+      },);
     } else {
       navigate(`/searchResult/${input}`);
       setInput("");

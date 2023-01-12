@@ -15,7 +15,7 @@ function App() {
   const [{ themeName }] = useContext(ThemeContext);
   return (
     <div className={`${themeName} app`}>
-      <ToastContainer autoClose={2500} />
+      <ToastContainer autoClose={1500} />
       <Routes>
         <Route path="introduction" element={<Introduction />} />
 

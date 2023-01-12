@@ -20,7 +20,9 @@ const MyWordBook = () => {
   const deleteHandler = (wordId) => {
     try {
       axios.delete(`${baseUrl}/word/${wordId}`).then((res) => {
-        toast.success("Delete successfully");
+        toast.success("Delete successfully", {
+          position: toast.POSITION.TOP_CENTER,
+        });
         // window.location.reload();
 
         const newSavedWords = savedWords.filter((word) => {
@@ -30,7 +32,6 @@ const MyWordBook = () => {
         setSavedWords(newSavedWords);
       });
     } catch (error) {
-        
       console.log(" delete", error.message);
     }
   };

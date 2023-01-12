@@ -51,7 +51,9 @@ const SearchResult = () => {
         Wort: input,
       });
       refreshSavedWords();
-      toast.success("Save successfully");
+      toast.success("Save successfully", {
+        position: toast.POSITION.TOP_CENTER,
+      });
       setSaveStatus(true);
     } else {
       toast.error("Please log in at first.", {
