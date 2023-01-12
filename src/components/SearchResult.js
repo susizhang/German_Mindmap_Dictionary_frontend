@@ -13,7 +13,7 @@ import SavedWordContext from "../context/SavedWordContext";
 import { useContext } from "react";
 
 const SearchResult = () => {
-  const { savedWords } = useContext(SavedWordContext);
+  const { savedWords, refreshSavedWords } = useContext(SavedWordContext);
   console.log("resultPage", savedWords);
 
   const [resultPageData, setResultPageData] = useState("");
@@ -45,11 +45,12 @@ const SearchResult = () => {
     setSaveStatus(isSaved);
   }, [savedWords, input]);
 
-  const saveWordHandler = () => {
+  const saveWordHandler = async () => {
     if (user) {
-      axios.post(`${baseUrl}/word/save`, {
+      await axios.post(`${baseUrl}/word/save`, {
         Wort: input,
       });
+      refreshSavedWords();
       toast.success("Save successfully");
       setSaveStatus(true);
     } else {
