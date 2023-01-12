@@ -26,13 +26,7 @@ const SearchResult = () => {
 
   useEffect(() => {
     axios
-      .get(
-        `${baseUrl}/:${input},{
-          headers: {
-            Authorization: Bearer ${user.token},
-          },
-        }`
-      )
+      .get(`${baseUrl}/:${input}`)
       .then(({ data }) => {
         setError(false);
         setResultPageData(data);

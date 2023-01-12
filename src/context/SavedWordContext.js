@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import { baseUrl } from "../config";
 import { useAuthContext } from "../hooks/userAuthContext";
 
-const SavedWordContext = createContext();
+export const SavedWordContext = createContext();
 
 export function SavedWordProvider({ children }) {
   const [savedWords, setSavedWords] = useState();
