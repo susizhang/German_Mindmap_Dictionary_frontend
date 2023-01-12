@@ -23,7 +23,6 @@ const SearchResult = () => {
   const { user } = useAuthContext();
 
   //   console.log("Input ", input);
-  //   console.log(" ", resultPageData);
 
   useEffect(() => {
     axios
