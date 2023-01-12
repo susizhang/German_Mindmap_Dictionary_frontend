@@ -46,9 +46,17 @@ const SearchResult = () => {
 
   const saveWordHandler = async () => {
     if (user) {
-      await axios.post(`${baseUrl}/word/save`, {
-        Wort: input,
-      });
+      await axios.post(
+        `${baseUrl}/word/save`,
+        {
+          Wort: input,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       refreshSavedWords();
       toast.success("Save successfully", {
         position: toast.POSITION.TOP_CENTER,

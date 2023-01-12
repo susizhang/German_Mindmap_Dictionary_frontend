@@ -6,7 +6,7 @@ const ThemeContext = createContext();
 const ThemeProvider = ({ children }) => {
   const [themeName, setThemeName] = useState(() => {
     const localData = localStorage.getItem("themeName");
-    return localData ? localData : "dark";
+    return localData ? localData : "light";
   });
 
   const toggleTheme = () => {

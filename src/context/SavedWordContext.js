@@ -1,19 +1,29 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { baseUrl } from "../config";
+import { useAuthContext } from "../hooks/userAuthContext";
 
 const SavedWordContext = createContext();
 
 export function SavedWordProvider({ children }) {
   const [savedWords, setSavedWords] = useState();
   const [countNew, setCountNew] = useState(0);
+  const { user } = useAuthContext();
 
   useEffect(() => {
-    axios.get(`${baseUrl}/word/allWords`).then(({ data }) => {
-      //   console.log("data", data.SavedWordsList);
-      setSavedWords(data.SavedWordsList);
-    });
-  }, [countNew]);
+    if (user) {
+      axios
+        .get(`${baseUrl}/word/allWords`, {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        })
+        .then(({ data }) => {
+          //   console.log("data", data.SavedWordsList);
+          setSavedWords(data.SavedWordsList);
+        });
+    }
+  }, [countNew, user]);
   //   console.log("saveContext ", savedWords);
 
   const refreshSavedWords = () => setCountNew((curr) => curr + 1);
