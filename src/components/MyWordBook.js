@@ -29,7 +29,7 @@ const MyWordBook = () => {
         )
         .then((res) => {
           toast.success("Delete successfully", {
-            position: toast.POSITION.TOP_CENTER,
+            position: toast.POSITION.TOP_LEFT,
           });
           // window.location.reload();
 
