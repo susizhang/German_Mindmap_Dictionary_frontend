@@ -7,16 +7,16 @@ import "./introduction.css";
 
 const Introduction = () => {
   return (
-    <div className=" flex flex-col  items-center pt-16  intro-container	">
-      <h1 className=" font-bold text-center tracking-tight leading-none">
-        Use <span className="intro-mindmap">mindmap</span> to
-        <br /> learn german words
+    <div className="  intro-container	">
+      <h1 className="  text-center tracking-tight leading-none">
+        Use <span className="intro-mindmap">mindmap</span> to learn
+        <br /> german words
       </h1>
-      <p className="text-4xl font-normal text-slate-500 mt-8 mb-6 ">
+      <p className="text-4xl font-normal text-slate-500 mt-12 mb-2 ">
         Learn 10 related words at once
       </p>
 
-      <div className=" border-2 border-gray-200  h-16 mt-16 rounded-full w-1/3 flex font-normal  ">
+      <div className=" border-2 border-gray-200  h-16 mt-20 rounded-full intro-form-container flex font-normal  ">
         <form className="flex ml-6 w-full items-center " action="">
           <BiSearch />
           <input
@@ -26,7 +26,7 @@ const Introduction = () => {
             readOnly
           />
           <Link
-            className="introduction-search-button w-1/3 h-full   rounded-full text-white  flex items-center justify-center   "
+            className="introduction-search-button w-1/3 h-full  rounded-full text-white  flex items-center justify-center   "
             to="/home/searchResult/einkaufen"
           >
             Try now

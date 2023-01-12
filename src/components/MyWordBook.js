@@ -54,7 +54,7 @@ const MyWordBook = () => {
         </Link>
       </nav>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-10/12 m-auto ">
-        <table className="w-full text-lg text-left text-gray-500  ">
+        <table className="w-full text-base text-left text-gray-500  ">
           <thead className="text-base text-gray-700 uppercase bg-gray-100 ">
             <tr>
               <th scope="col" className="px-6 py-3"></th>

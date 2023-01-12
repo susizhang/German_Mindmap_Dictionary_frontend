@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&family=Montserrat:wght@400;500;900&display=swap");
+
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
 }
 #root {

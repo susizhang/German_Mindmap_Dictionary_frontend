@@ -27,9 +27,6 @@ const Home = () => {
 
   return (
     <div className="flex flex-col ">
-      <Link to="/" className="m-auto mb-10">
-        Introduction page
-      </Link>
       <main>
         <h1 className="text-6xl font-bold text-center tracking-tight">
           Word for today
