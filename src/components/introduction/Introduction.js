@@ -13,7 +13,9 @@ const Introduction = () => {
         <br /> german words
       </h1>
       <p className="text-2xl  md:text-3xl lg:text-4xl font-normal text-center text-slate-500 mt-12 mb-2 ">
-        Learn 10 related words at once
+        A visual way to make your German learning
+        <br />
+        easier, funnier and more efficient
       </p>
 
       <div className=" border-2 border-gray-200  h-16 mt-20 rounded-full intro-form-container flex font-normal  ">
