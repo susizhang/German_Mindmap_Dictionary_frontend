@@ -26,6 +26,16 @@ https://github.com/susizhang/German_Mindmap_Dictionary_backend
 
 ## Libraries
 
+markmap --Visualize Markdown as mindmaps :https://github.com/markmap/markmap
+
+Wikidictionary -- Get German words: https://de.wiktionary.org/w/api.php?titles=word&action=query&prop=extracts&format=json#
+
+Cheerio -- parse html to json : https://github.com/cheeriojs/cheerio/wiki/Chinese-README
+
+React-hook-form + yup -- signup/login validation: https://github.com/react-hook-form/react-hook-form https://github.com/jquense/yup
+
+AntDesign UI -- UI Component https://ant.design/
+
 ## Next improvement
 
 1. Add der/die/das to every word
@@ -40,8 +50,8 @@ https://github.com/susizhang/German_Mindmap_Dictionary_backend
 2. Website logo is from:
    <a href="https://iconscout.com/illustrations/happy-businessman" target="_blank">Happy businessman Illustration</a> by <a href="https://iconscout.com/contributors/iconscout" target="_blank">IconScout Store</a>
 
-3.404 page illustration made by storyset:
-<a href="https://storyset.com/web">Web illustrations by Storyset</a>
+3. 404 page illustration made by storyset:
+   <a href="https://storyset.com/web">Web illustrations by Storyset</a>
 
 ## Author
 
