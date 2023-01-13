@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { baseUrl } from "../config";
 import { RandomWordList } from "../data/RandomWordList";
 import SearchResultMarkdownMap from "./SearchResultMarkdownMap";
+import { BallTriangle } from "react-loader-spinner";
 
 const Home = () => {
   const [randomWord, setRandomWord] = useState("");
@@ -23,7 +23,19 @@ const Home = () => {
     });
   }, [randomInput]);
 
-  if (!randomWord) return "Loading";
+  if (!randomWord)
+    return (
+      <BallTriangle
+        height={100}
+        width={100}
+        radius={5}
+        color="#4fa94d"
+        ariaLabel="ball-triangle-loading"
+        wrapperClass={{}}
+        wrapperStyle=""
+        visible={true}
+      />
+    );
 
   return (
     <div className="flex flex-col ">
