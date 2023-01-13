@@ -2,7 +2,7 @@
 
 A visual way to make learning German easier, funnier and more efficient.
 
-This project is trying to visualize a German dictionary as mindmaps, so that German learners can learn German words easier,faster and more effectively!
+This project is trying to visualize a German dictionary as mindmaps, so that German learners can learn German words easier, faster and more effectively!
 
 ## How it looks
 
@@ -16,22 +16,27 @@ This project is trying to visualize a German dictionary as mindmaps, so that Ger
 
 ![image](https://github.com/susizhang/German_Mindmap_Dictionary_frontend/blob/main/src/assets/darkmode.gif)
 
-## responsive
+## Responsive
 
 ![image](https://github.com/susizhang/German_Mindmap_Dictionary_frontend/blob/main/src/assets/responsive%20design.png)
 
-## Library
+## Backend Repo
+
+https://github.com/susizhang/German_Mindmap_Dictionary_backend
+
+## Libraries
 
 ## Next improvement
 
 1. Add der/die/das to every word
-2. Add notes(if there are) to mindmap
-3. Link to similar looking words
-4. Add translation in Chinese or English
+2. Add notes (if there are any) to mindmap
+3. Link to similar words
+4. Add translation to Chinese or English
+5. If possible, add visualization to words
 
 ## Thanks
 
-1. This project use markmap : https://github.com/markmap/markmap
+1. This project uses markmap : https://github.com/markmap/markmap
 2. Website logo is from:
    <a href="https://iconscout.com/illustrations/happy-businessman" target="_blank">Happy businessman Illustration</a> by <a href="https://iconscout.com/contributors/iconscout" target="_blank">IconScout Store</a>
 
@@ -39,3 +44,5 @@ This project is trying to visualize a German dictionary as mindmaps, so that Ger
 <a href="https://storyset.com/web">Web illustrations by Storyset</a>
 
 ## Author
+
+Susi Zhang https://github.com/susizhang
