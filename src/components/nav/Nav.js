@@ -2,9 +2,8 @@ import { useState, useContext } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { BiSun } from "react-icons/bi";
-import { BiMenu } from "react-icons/bi";
-import { BiX } from "react-icons/bi";
-
+import { FiMenu } from "react-icons/fi";
+import { FiX } from "react-icons/fi";
 import { BiMoon } from "react-icons/bi";
 import logo from "../../assets/logo.png";
 import { ThemeContext } from "../../context/Theme";
@@ -116,7 +115,7 @@ function Nav() {
           className="btn  btn--icon nav__hamburger"
           aria-label="toggle navigation"
         >
-          {showNavList ? <BiX /> : <BiMenu />}
+          {showNavList ? <FiX /> : <FiMenu />}
         </button>
       </nav>
       <div>

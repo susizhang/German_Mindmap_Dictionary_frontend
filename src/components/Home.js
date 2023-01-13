@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <div className="flex flex-col ">
       <main>
-        <h1 className="text-6xl font-bold text-center tracking-tight">
+        <h1 className=" text-4xl sm:text-6xl font-bold text-center tracking-tight">
           Word for today
         </h1>
       </main>
