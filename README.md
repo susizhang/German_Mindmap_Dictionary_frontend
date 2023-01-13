@@ -26,15 +26,15 @@ https://github.com/susizhang/German_Mindmap_Dictionary_backend
 
 ## Libraries
 
-Markmap --Visualize Markdown as mindmaps :https://github.com/markmap/markmap
+Markmap --Visualize Markdown as mindmaps: https://github.com/markmap/markmap
 
 Wikidictionary -- Get German words: https://de.wiktionary.org/w/api.php?titles=word&action=query&prop=extracts&format=json#
 
-Cheerio -- parse html to json : https://github.com/cheeriojs/cheerio/wiki/Chinese-README
+Cheerio -- parse html to json: https://github.com/cheeriojs/cheerio/wiki/Chinese-README
 
 React-hook-form + yup -- signup/login validation: https://github.com/react-hook-form/react-hook-form https://github.com/jquense/yup
 
-AntDesign UI -- UI Component https://ant.design/
+AntDesign UI -- UI Component: https://ant.design/
 
 ## Next improvement
 
