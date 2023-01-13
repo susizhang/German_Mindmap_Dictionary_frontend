@@ -1,17 +1,25 @@
-# use mindmap to display german words
+# Use mindmaps to display german words
 
-A visual way to make German learning easier, funnier and more efficient.
+A visual way to make learning German easier, funnier and more efficient.
 
-This project is trying to visualize German dictionary as mindmaps, so that german learners can learn German words easier,faster and more effectively!
+This project is trying to visualize a German dictionary as mindmaps, so that German learners can learn German words easier,faster and more effectively!
 
 ## How it looks
+
 ![image](https://github.com/susizhang/German_Mindmap_Dictionary_frontend/blob/main/src/assets/MindGerman1.gif)
+
 ## Save words to my Wordbook
+
 ![image](https://github.com/susizhang/German_Mindmap_Dictionary_frontend/blob/main/src/assets/MindGerman-save-openinmindmap-edit.gif)
+
 ## Dark Mode
+
 ![image](https://github.com/susizhang/German_Mindmap_Dictionary_frontend/blob/main/src/assets/darkmode.gif)
+
 ## responsive
+
 ![image](https://github.com/susizhang/German_Mindmap_Dictionary_frontend/blob/main/src/assets/responsive%20design.png)
+
 ## Library
 
 ## Next improvement
