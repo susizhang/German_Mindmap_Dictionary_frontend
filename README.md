@@ -26,7 +26,7 @@ https://github.com/susizhang/German_Mindmap_Dictionary_backend
 
 ## Libraries
 
-markmap --Visualize Markdown as mindmaps :https://github.com/markmap/markmap
+Markmap --Visualize Markdown as mindmaps :https://github.com/markmap/markmap
 
 Wikidictionary -- Get German words: https://de.wiktionary.org/w/api.php?titles=word&action=query&prop=extracts&format=json#
 
