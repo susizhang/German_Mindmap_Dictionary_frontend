@@ -12,7 +12,7 @@ const Introduction = () => {
         Use <span className="intro-mindmap">mindmap</span> to learn
         <br /> german words
       </h1>
-      <p className="text-4xl font-normal text-slate-500 mt-12 mb-2 ">
+      <p className="text-2xl  md:text-3xl lg:text-4xl font-normal text-center text-slate-500 mt-12 mb-2 ">
         Learn 10 related words at once
       </p>
 

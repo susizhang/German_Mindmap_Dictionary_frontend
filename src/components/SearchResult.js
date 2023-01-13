@@ -58,13 +58,13 @@ const SearchResult = () => {
         }
       );
       refreshSavedWords();
-      toast.success("Save successfully", {
-        position: toast.POSITION.TOP_LEFT,
-      });
+      //   toast.success("Save successfully", {
+      //     position: toast.POSITION.TOP_LEFT,
+      //   });
       setSaveStatus(true);
     } else {
       toast.error("Please log in at first.", {
-        position: toast.POSITION.TOP_LEFT,
+        position: toast.POSITION.TOP_CENTER,
       });
     }
   };

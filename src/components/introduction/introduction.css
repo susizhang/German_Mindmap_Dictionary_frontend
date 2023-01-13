@@ -9,30 +9,10 @@
   padding-bottom: 140px;
 }
 
-.intro-container h1 {
-  font-size: 90px;
-  font-weight: 900;
-  line-height: 110px;
-  word-spacing: -10px;
-}
 .introduction-search-button {
   background-color: #18cd82;
   font-size: 22px;
   font-weight: bold;
-}
-.intro-form-container {
-  width: 800px;
-  margin-bottom: 20px;
-}
-
-.intro-mindmap {
-  /* color: blueviolet; */
-  margin-left: -10px;
-  padding: 20px;
-  background-image: url("../../assets/Loop.png");
-  background-position: 0 0;
-  background-size: auto 151px;
-  background-repeat: no-repeat;
 }
 
 .search-input:focus {
@@ -43,4 +23,120 @@
   width: 1420px;
   margin: 0 auto;
   padding-bottom: 100px;
+}
+@media (max-width: 350px) {
+  .intro-container h1 {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 50px;
+    word-spacing: -5px;
+  }
+  .intro-mindmap {
+    color: blueviolet;
+  }
+  .intro-form-container {
+    width: 310px;
+  }
+  .introduction-search-button {
+    background-color: #18cd82;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+@media (min-width: 351px) {
+  .intro-container h1 {
+    font-size: 65px;
+    font-weight: 900;
+    line-height: 70px;
+    word-spacing: -5px;
+  }
+  .intro-mindmap {
+    color: blueviolet;
+  }
+  .intro-form-container {
+    width: 350px;
+    margin-bottom: 12px;
+  }
+  .introduction-search-button {
+    background-color: #18cd82;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .intro-img {
+    width: 700px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+  }
+}
+
+@media (min-width: 560px) {
+  .intro-container h1 {
+    font-size: 65px;
+    font-weight: 900;
+    line-height: 70px;
+    word-spacing: -5px;
+  }
+  .intro-mindmap {
+    color: blueviolet;
+  }
+  .intro-form-container {
+    width: 500px;
+    margin-bottom: 20px;
+  }
+  .introduction-search-button {
+    background-color: #18cd82;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+@media (min-width: 1100px) {
+  .intro-container h1 {
+    font-size: 76px;
+    font-weight: 900;
+    line-height: 96px;
+    word-spacing: -5px;
+  }
+  .intro-mindmap {
+    margin-left: -10px;
+    padding: 17px;
+    background-image: url("../../assets/Loop.png");
+    background-position: 0 0;
+    background-size: auto 128px;
+    background-repeat: no-repeat;
+  }
+  .intro-form-container {
+    width: 800px;
+    margin-bottom: 20px;
+  }
+  .introduction-search-button {
+    background-color: #18cd82;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 1580px) {
+  .intro-container h1 {
+    font-size: 90px;
+    font-weight: 900;
+    line-height: 110px;
+    word-spacing: -10px;
+  }
+  .intro-mindmap {
+    margin-left: -10px;
+    padding: 20px;
+    background-image: url("../../assets/Loop.png");
+    background-position: 0 0;
+    background-size: auto 151px;
+    background-repeat: no-repeat;
+  }
+  .intro-form-container {
+    width: 800px;
+    margin-bottom: 20px;
+  }
+  .introduction-search-button {
+    background-color: #18cd82;
+    font-size: 22px;
+    font-weight: bold;
+  }
 }

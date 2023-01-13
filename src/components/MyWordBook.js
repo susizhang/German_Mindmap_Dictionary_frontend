@@ -3,8 +3,6 @@ import logo from "../assets/logo.png";
 import ScrollToTop from "react-scroll-to-top";
 import axios from "axios";
 import SavedWordContext from "../context/SavedWordContext";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { baseUrl } from "../config";
 import AddingNotesModal from "./AddingNotesModal";
@@ -27,9 +25,6 @@ const MyWordBook = () => {
           },
         })
         .then((res) => {
-          toast.success("Delete successfully", {
-            position: toast.POSITION.TOP_LEFT,
-          });
           // window.location.reload();
 
           const newSavedWords = savedWords.filter((word) => {
@@ -68,12 +63,12 @@ const MyWordBook = () => {
               <th scope="col" className="px-6 py-3">
                 Word
               </th>
-              <th scope="col" className="pr-36 py-3">
+              <th scope="col" className=" py-3">
                 Notes
               </th>
               <th scope="col" className=" py-3"></th>
-              <th scope="col" className="pr-1 py-3"></th>
-              <th scope="col" className=" py-3"></th>
+              {/* <th scope="col" className="pr-1 py-3"></th> */}
+              {/* <th scope="col" className=" py-3"></th> */}
             </tr>
           </thead>
           <tbody>
@@ -85,28 +80,26 @@ const MyWordBook = () => {
                 <td className="px-6 py-4 text-lg  text-gray-900 whitespace-nowrap ">
                   {word.Wort}
                 </td>
-                <td className="pr-36 py-4">{word.Notizen}</td>
-                <td className=" py-4">
+                <td className=" py-4">{word.Notizen}</td>
+                <td className="wordbook-action py-4">
                   <button
                     onClick={() => showInMindmapHandler(word.Wort)}
                     className="font-medium bg-green-500 px-2 py-2 rounded-md  text-white"
                   >
                     show in mindmap
                   </button>
-                </td>
-
-                <td className="py-4">
                   <AddingNotesModal
                     wordId={word._id}
                     notes={word.Notizen}
                     setSavedWords={setSavedWords}
                   />
-                </td>
-                <td className="px-4 py-6">
                   <button onClick={() => deleteHandler(word._id)}>
                     <RiDeleteBin4Line />
                   </button>
                 </td>
+
+                {/* <td className="py-4"></td> */}
+                {/* <td className="px-4 py-6"></td> */}
               </tr>
             ))}
           </tbody>

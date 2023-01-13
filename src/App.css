@@ -60,3 +60,11 @@
 .container-pb-900px {
   padding-bottom: 900px;
 }
+
+.wordbook-action {
+  display: flex;
+  gap: 3em;
+  justify-content: flex-end;
+  margin-right: 3em;
+  align-items: center;
+}
