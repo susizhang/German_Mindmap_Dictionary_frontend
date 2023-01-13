@@ -68,3 +68,8 @@
   margin-right: 3em;
   align-items: center;
 }
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+}

@@ -78,7 +78,7 @@ const SearchResult = () => {
         radius={5}
         color="#4fa94d"
         ariaLabel="ball-triangle-loading"
-        wrapperClass={{}}
+        wrapperClass="loading-spinner"
         wrapperStyle=""
         visible={true}
       />

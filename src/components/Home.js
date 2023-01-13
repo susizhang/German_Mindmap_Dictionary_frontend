@@ -31,7 +31,7 @@ const Home = () => {
         radius={5}
         color="#4fa94d"
         ariaLabel="ball-triangle-loading"
-        wrapperClass={{}}
+        wrapperClass="loading-spinner"
         wrapperStyle=""
         visible={true}
       />
@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <div className="flex flex-col ">
       <main>
-        <h1 className=" text-4xl sm:text-6xl font-bold text-center tracking-tight">
+        <h1 className=" text-4xl sm:text-6xl font-bold text-center pt-10 tracking-tight">
           Word for today
         </h1>
       </main>
