@@ -11,7 +11,7 @@ import Nav from "./components/nav/Nav";
 import Signup from "./components/signup+login/Signup";
 import Login from "./components/signup+login/Login";
 import ReactGA from "react-ga4";
-ReactGA.initialize("G-Y5L7BFHQPB");
+ReactGA.initialize("G-NQ0K7TYLH5");
 ReactGA.send({ hitType: "pageview", page: "/home" });
 
 function App() {
