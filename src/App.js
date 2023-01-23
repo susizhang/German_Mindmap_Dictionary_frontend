@@ -10,6 +10,9 @@ import Introduction from "./components/introduction/Introduction";
 import Nav from "./components/nav/Nav";
 import Signup from "./components/signup+login/Signup";
 import Login from "./components/signup+login/Login";
+import ReactGA from "react-ga4";
+ReactGA.initialize("G-Y5L7BFHQPB");
+ReactGA.send({ hitType: "pageview", page: "/my-path" });
 
 function App() {
   const [{ themeName }] = useContext(ThemeContext);
