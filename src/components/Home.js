@@ -13,7 +13,7 @@ const Home = () => {
     setInterval(() => {
       setRandomIndex(Math.floor(Math.random() * 966));
     }, 86400000); // 24 hours
-  }, []);
+  }, [randomIndex]);
 
   const randomInput = RandomWordList[randomIndex];
 
